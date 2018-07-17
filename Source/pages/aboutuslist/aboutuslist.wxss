@@ -1,0 +1,14 @@
+/* pages/aboutuslist/aboutuslist.wxss */
+.item{
+  width: 330rpx;
+  padding-right: 30rpx;
+  margin-top: 40rpx;
+}
+.item-content{
+  border:2rpx rgba(180, 180, 180, 0.5) solid;
+  border-radius: 10rpx;
+}
+.item-img{
+  width: 326rpx;
+  height: 400rpx;
+}

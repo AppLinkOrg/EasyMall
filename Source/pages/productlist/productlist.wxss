@@ -1,0 +1,38 @@
+/* pages/productlist/productlist.wxss */
+.cat{
+  min-width: 140rpx;
+  border-bottom: 2rpx solid #cdcdcd;
+  border-left: 10rpx transparent solid;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  color:#666;
+}
+.selectedcat{
+  border-left: 10rpx #BF8436 solid;
+  background: white;
+
+}
+
+.productlist{
+  height: 100vh;
+  width: 100%;
+}
+
+.product{
+  padding:20rpx;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+.product .cover{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 6rpx;
+}
+.product .title{
+}
+.product .summary{
+  margin-top: 10rpx;
+}
+.product .price{
+  margin-top: 20rpx;
+  font-weight: bolder;
+}

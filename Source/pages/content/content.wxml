@@ -1,0 +1,9 @@
+<!--pages/content/content.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class='bg-primary  flex-row bigheader'>
+  <view class='h4 '>{{title}}</view>
+</view>
+
+<view style='padding:20rpx;'>
+            <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+</view>

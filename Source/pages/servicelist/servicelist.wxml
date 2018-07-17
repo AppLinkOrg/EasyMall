@@ -1,0 +1,13 @@
+<!--pages/aboutuslist/aboutuslist.wxml-->
+<view class='flex-row flex-wrap' style='padding-left:30rpx;margin-bottom:40rpx;'  >
+  <navigator url='/pages/service/service?id={{item.id}}' wx:for="{{servicelist}}" wx:key="key" class='item'>
+    <view class='item-content'>
+      <view>
+      <image src='{{uploadpath}}service/{{item.cover}}' class='item-img' mode='aspectFill'></image>
+      </view>
+      <view class='padding-20 text-center'>
+      {{item.name}}
+      </view>
+    </view>
+  </navigator>
+</view>

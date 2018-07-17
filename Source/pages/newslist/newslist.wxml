@@ -1,0 +1,36 @@
+<!--pages/newslist/newslist.wxml-->
+<!--pages/home/home.wxml-->
+<view class='flex-row tabs'>
+  <block wx:for="{{newscat}}" wx:key="aaa" wx:for-index="index">
+    <view class='flex-1 tab  flex-row ' bindtap='changeTab' id="{{index}}">
+      <view class='flex-1'></view>
+      <view class='tabtext {{currenttab==index?"active":""}}'>{{item.name}}</view>
+      <view class='flex-1'></view>
+    </view>
+  </block>
+</view>
+
+<swiper indicator-dots="{{false}}" class='bottomtabs ' current='{{currenttab}}' bindchange="changeCurrentTab" class="maintab">
+  <swiper-item wx:for="{{newscat}}" wx:key="aaa" wx:for-index="index">
+    <scroll-view scroll-y style='height:100%'>
+      <block wx:for="{{item.newslist}}" wx:key="k">
+        <navigator url='/pages/news/news?id={{item.id}}' class='flex-row rowitem white-block'>
+          <view>
+            <image src='{{uploadpath}}news/{{item.cover}}' class='imgcover' mode='aspectFill'></image>
+          </view>
+          <view class='flex-1'>
+            <view class='headtitle'>{{item.name}}</view>
+            <view class='headdescription'>
+              {{item.summary}}
+            </view>
+            <view class='headdescription text-right'>{{item.published_date_formatting}}</view>
+          </view>
+        </navigator>
+      </block>
+      <view class='inbottomla' wx:if="{{item.newslist.length>3}}">
+        到底啦
+      </view>
+    </scroll-view>
+
+  </swiper-item>
+</swiper>

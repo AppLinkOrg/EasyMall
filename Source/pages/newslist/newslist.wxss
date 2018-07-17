@@ -1,0 +1,24 @@
+/* pages/newslist/newslist.wxss */
+.maintabs{
+  height: calc( 100vh - 235rpx);
+  
+}
+.maintab-item{
+  height: 100%;
+}
+.maintab_icon{
+  width: 80rpx;
+  height: 80rpx;
+  background: white;
+  border-radius: 50%;
+  padding:20rpx;
+}
+.cat-tab{
+  padding: 20rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #cdcdcd;
+}
+.cat-tab.selected{
+  background: white;
+  color: #F04848;
+}

@@ -1,0 +1,33 @@
+<view class='subbar flex-row'>
+  <view class='firsttab'></view>
+  <view class='secondtab'>请填写用户注册信息</view>
+</view>
+<view class='subbar flex-row' style='font-size:28rpx;'>
+  <view class='flex-1' style='margin-left:10rpx;'>
+    <input placeholder="请输入真实姓名" value='{{name}}' bindinput="nameChange" maxlength='20' auto-focus='{{true}}' focus />
+  </view>
+</view>
+<view class='subbar flex-row' style='font-size:28rpx;'>
+  <view class='flex-1' style='margin-left:10rpx;'>
+    <input type='number' focus='true' bindinput="mobileChange"  placeholder="请输入手机号" maxlength='11' value='{{mobile}}' />
+  </view>
+</view>
+<view class='subbar flex-row' style='font-size:28rpx;'>
+  <view class='flex-1' style='margin-left:10rpx;'>
+          <input  placeholder="请输入验证码" maxlength='6' bindinput="verifycodeChange" />
+  </view>
+  <view>
+  
+          <button type='primary' size='mini' wx:if="{{reminderResend==0}}" bindtap='sendVerifycode'>获取验证码</button>
+          <button  wx:if="{{reminderResend>0}}" style="color:gray">重新发送({{reminderResend}})</button>
+  </view>
+</view>
+<view class='padding-20'  style='font-size:28rpx;'>
+        <navigator url="/pages/content/content?keycode=useragreement" class="weui-agree__link">提交即代表你同意《用户注册条款》</navigator>
+</view>
+
+<view class='padding-20'>
+      <button  type="primary" bindtap="submitRegister">确认提交</button>
+</view>
+
+

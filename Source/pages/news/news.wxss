@@ -1,0 +1,11 @@
+/* pages/news/news.wxss */
+.summary{
+  margin:40rpx;
+  margin-top: 0rpx;
+  padding:20rpx;
+  background: #ccc;
+  font-size: 26rpx;
+  color:#f2f2f2;
+  border-radius: 10rpx;
+  font-style: italic;
+}

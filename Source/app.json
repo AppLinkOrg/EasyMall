@@ -1,0 +1,65 @@
+{
+  "pages":[
+    "pages/goodscat/goodscat",
+    "pages/home/home",
+    "pages/product/product",
+    "pages/auth/auth",
+    "pages/success/success",
+    "pages/signup/signup",
+    "pages/productlist/productlist",
+    "pages/news/news",
+    "pages/service/service",
+    "pages/newslist/newslist",
+    "pages/aboutuslist/aboutuslist",
+    "pages/aboutus/aboutus",
+    "pages/index/index",
+    "pages/servicelist/servicelist",
+    "pages/member/member",
+    "pages/content/content",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#f2f2f2",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#F04848",
+    "borderStyle": "#eeeeee",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/home",
+        "iconPath": "images/icons/home-o.png",
+        "selectedIconPath": "images/icons/home.png"
+      },
+      {
+        "text": "分类",
+        "pagePath": "pages/goodscat/goodscat",
+        "iconPath": "images/icons/catlist-o.png",
+        "selectedIconPath": "images/icons/catlist.png"
+      },
+      {
+        "text": "产品",
+        "pagePath": "pages/productlist/productlist",
+        "iconPath": "images/icons/find-o.png",
+        "selectedIconPath": "images/icons/find.png"
+      },
+      {
+        "text": "动态",
+        "pagePath": "pages/newslist/newslist",
+        "iconPath": "images/icons/cart-o.png",
+        "selectedIconPath": "images/icons/cart.png"
+      },
+      {
+        "text": "服务",
+        "pagePath": "pages/servicelist/servicelist",
+        "iconPath": "images/icons/user-o.png",
+        "selectedIconPath": "images/icons/user.png"
+      }
+    ]
+  }
+}

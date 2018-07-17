@@ -1,0 +1,16 @@
+<!--pages/content/content.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class='flex-row bigheader'>
+  <view class='h4 '>{{name}}</view>
+</view>
+
+<view style='padding:20rpx;'>
+  <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+</view>
+
+<view class='block-100'></view>
+<view class='fixedbottom'>
+  <button type='primary' open-type='contact'>
+    联系客服
+  </button>
+</view>

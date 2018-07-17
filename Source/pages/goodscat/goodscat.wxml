@@ -1,0 +1,38 @@
+<!--pages/goodscat/goodscat.wxml-->
+<view class='flex-row'>
+  <view style='width:200rpx;margin-right:4rpx;' class='white-block'>
+    <scroll-view scroll-y style='height:100vh;width:100%' class='text-center'>
+      <view wx:for="{{catlist}}" wx:key="k" wx:for-index="idx" class='padding-20 {{item.active=="Y"?"txt-primary":"h5"}}' id="{{idx}}" bindtap='catclick' >
+        {{item.name}}
+      </view>
+    </scroll-view>
+  </view>
+  <view class='flex-1 white-block'>
+  <scroll-view scroll-y style='height:100vh;width:100%' scroll-into-view="cat_{{scidx}}" scroll-with-animation="{{true}}" >
+    <view  wx:for="{{catlist}}" wx:key="k" wx:for-index="idx" id="cat_{{idx}}" >
+        <view class='margin-top flex-row flex-center'>
+          <view class='flex-1 text-right line-height-0'>
+            <image style='width:38rpx;height:2rpx;background:rgba(211,211,211,0.5);margin-right:26rpx;'></image>
+          </view>
+          <view style='margin-top:10rpx;'>
+          {{item.name}}
+          </view>
+          <view class='flex-1 line-height-0'>
+            <image style='width:38rpx;height:2rpx;background:rgba(211,211,211,0.5);margin-left:26rpx;'></image>
+          </view>
+        </view>
+        <view class='flex-row flex-wrap'>
+          <view class='item text-center margin-top-10' wx:for="{{item.goods}}" wx:key="k" wx:for-item="subitem">
+          <view >
+      <image class='icon-40' src='{{uploadpath}}product/{{subitem.cover}}' ></image>
+      </view>
+      <view class='h6 ' style='margin-top:6rpx;'>
+        {{subitem.name}}
+        </view>
+          </view>
+        </view>
+    </view>
+    </scroll-view>
+  </view>
+</view>
+

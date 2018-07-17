@@ -1,0 +1,5 @@
+/* pages/signup/signup.wxss */
+.subbar{
+  margin-top: 0rpx;
+  border:0rpx;
+}

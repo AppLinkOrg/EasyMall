@@ -1,0 +1,13 @@
+<!--pages/success/success.wxml-->
+<view class='text-center  padding-20  white-block'>
+
+<view class='text-center ' >
+<image style='width:400rpx;height:400rpx;margin-top:100rpx;margin-bottom:30rpx;' src='{{uploadpath}}resource/successcheck.png'></image>
+</view>
+<view class='h2 txt-primary' style='margin-bottom:100rpx;'>支付成功</view>
+</view>
+
+<view class='margin-top padding-20'>
+
+<button bindtap='backPage' >返回</button>
+</view>

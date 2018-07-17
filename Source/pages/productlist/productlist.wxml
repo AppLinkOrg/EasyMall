@@ -1,0 +1,22 @@
+<!--pages/productlist/productlist.wxml-->
+<view class='flex-row'>
+  <view>
+    <view class='h5 padding-20 cat {{selectcat==item.id?"selectedcat":""}}' wx:for="{{productcatlist}}" wx:key="k" wx:for-index="index" id="{{index}}" bindtap='changeCat'>
+      {{item.name}}
+    </view>
+  </view>
+  <view class='flex-1'>
+  <scroll-view class='productlist white-block' scroll-y>
+    <navigator url='/pages/product/product?id={{item.id}}' wx:for="{{productlist}}" wx:key="k" class='flex-row product'>
+      <view>
+        <image src='{{uploadpath}}product/{{item.cover}}' class='cover'></image>
+      </view>
+      <view style='margin-left:20rpx;'>
+        <view class='title h5'>{{item.name}}</view>
+        <view class='summary txt-gray h6'>{{item.summary}}</view>
+        <view class='price h5 txt-primary'>{{item.price_txt}}</view>
+      </view>
+    </navigator>
+  </scroll-view>
+  </view>
+</view>

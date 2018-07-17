@@ -1,0 +1,15 @@
+<!--pages/aboutuslist/aboutuslist.wxml-->
+
+
+<view  wx:for="{{aboutuslist}}" wx:key="key">
+  <view class='subbar flex-row'>
+    <view class='firsttab'></view>
+    <view class='secondtab'>{{item.name}}</view>
+    <navigator url='/pages/aboutus/aboutus?id={{item.id}}' class='thirdtab flex-1 text-right'>查看详情</navigator>
+  </view>
+  <view class='white-block padding-20 h6 '>
+    <text>{{item.summary}}</text>
+  </view>
+</view>
+
+
