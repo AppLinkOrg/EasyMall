@@ -13,7 +13,9 @@
     <swiper indicator-dots="false" autoplay="{{true}}" interval="5000" duration="1000" style='height:370rpx;' indicator-color="rgba(0,0,0,0.3)" indicator-active-color='white'>
       <block wx:for="{{topbanner}}" wx:key="k">
         <swiper-item>
+          <navigator url='/pages/goodsdetail/goodsdetail?id={{item.product_id}}'>
           <image class='indexbanner' src="{{uploadpath}}indexbanner/{{item.img}}" />
+          </navigator>
         </swiper-item>
       </block>
     </swiper>
@@ -32,28 +34,28 @@
 
 
 <view class='flex-row margin-top-10 white-block' >
-  <view class='flex-1 line-height-0' style='margin-top:8rpx;margin-bottom:8rpx' >
+  <navigator url='/pages/goodsdetail/goodsdetail?id={{item.product_id}}'  class='flex-1 line-height-0' style='margin-top:8rpx;margin-bottom:8rpx' >
     <image  style='width:370rpx;height:540rpx;'  src='{{uploadpath}}indexbanner/{{mlbanner.img}}'></image>
-  </view>
+  </navigator>
   <view class='flex-1 text-right' style='margin-top:8rpx;'>
-    <view class='line-height-0'>
+    <navigator url='/pages/goodsdetail/goodsdetail?id={{item.product_id}}'  class='line-height-0'>
       <image  style='width:371rpx;height:266rpx;' src='{{uploadpath}}indexbanner/{{mrtbanner.img}}'></image>
-    </view>
-    <view class='line-height-0' style='margin-top:8rpx;'>
+    </navigator>
+    <navigator url='/pages/goodsdetail/goodsdetail?id={{item.product_id}}' class='line-height-0' style='margin-top:8rpx;'>
       <image style='width:371rpx;height:266rpx;' src='{{uploadpath}}indexbanner/{{mrbbanner.img}}'></image>
-    </view>
+    </navigator>
   </view>
 </view>
-<view wx:for="{{bottombanner}}" wx:key="k" class='margin-top-10 line-height-0'>
+<navigator url='/pages/goodsdetail/goodsdetail?id={{item.product_id}}' wx:for="{{bottombanner}}" wx:key="k" class='margin-top-10 line-height-0'>
   <image class='fullimg' mode='widthFix' src='{{uploadpath}}indexbanner/{{item.img}}'></image>
-</view>
+</navigator>
 
 <view wx:for="{{recommgoodscat}}" wx:key="k" class='margin-top-10 white-block'>
-  <view class='line-height-0'>
+  <navigator url='/pages/goodsdetail/goodsdetail?id={{item.product_id}}' class='line-height-0'>
     <image class='fullimg' mode='widthFix' src='{{uploadpath}}productcat/{{item.banner}}'></image>
-  </view>
+  </navigator>
   <view class='flex-row flex-wrap '>
-    <view wx:for="{{item.goods}}" wx:key='k2' wx:for-index="sidx" wx:for-item="subitem" class='recomm-item'  >
+    <navigator url='/pages/goodsdetail/goodsdetail?id={{subitem.id}}' wx:for="{{item.goods}}" wx:key='k2' wx:for-index="sidx" wx:for-item="subitem" class='recomm-item'  >
       <view class='{{sidx%2==1?"recomm-item2":""}}'>
       <image src='{{uploadpath}}product/{{subitem.cover}}' ></image>
       </view>
@@ -69,7 +71,7 @@
           <view class='txt-gray h6 text-line-through'>{{subitem.oripricestr}}</view>
         </view>
       </view>
-    </view>
+    </navigator>
   </view>
 </view>
 

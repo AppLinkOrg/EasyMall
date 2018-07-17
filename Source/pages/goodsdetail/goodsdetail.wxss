@@ -1,0 +1,5 @@
+/* pages/goodsdetail/goodsdetail.wxss */
+.photo{
+  width: 750rpx;
+  height: 825rpx;
+}

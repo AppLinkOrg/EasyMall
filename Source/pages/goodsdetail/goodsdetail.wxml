@@ -1,0 +1,52 @@
+<!--pages/goodsdetail/goodsdetail.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+
+<view>
+  <swiper indicator-dots="false" autoplay="{{true}}" interval="5000" duration="1000" style='height:825rpx;' indicator-color="rgba(0,0,0,0.3)" indicator-active-color='white'>
+    <block wx:for="{{photos}}" wx:key="k">
+      <swiper-item>
+        <image class='photo' src="{{uploadpath}}goods/{{item.photo}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='padding-20 white-block'>
+  <view>
+    {{name}}
+  </view>
+  <view class='h6 txt-gray margin-top-10'>
+    {{summary}}
+  </view>
+  <view class='margin-top-10 flex-row flex-bottom'>
+    <view class='txt-primary ' style='margin-right:10rpx;'>{{pricestr}}</view>
+    <view class='txt-gray h6 text-line-through'>{{oripricestr}}</view>
+  </view>
+</view>
+
+
+<view class='flex-row tabs margin-top-10'>
+    <view class='flex-1 tab  flex-row ' bindtap='changeTab' id="0">
+      <view class='flex-1'></view>
+      <view class='tabtext {{currenttab==0?"active":""}}'>概述</view>
+      <view class='flex-1'></view>
+    </view>
+    <view class='flex-1 tab  flex-row ' bindtap='changeTab' id="1">
+      <view class='flex-1'></view>
+      <view class='tabtext {{currenttab==1?"active":""}}'>参数</view>
+      <view class='flex-1'></view>
+    </view>
+</view>
+<swiper indicator-dots="{{false}}" class='bottomtabs ' current='{{currenttab}}' bindchange="changeCurrentTab" class="maintab">
+  <swiper-item >
+    <scroll-view scroll-y style='height:100%'>
+            <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+    </scroll-view>
+
+  </swiper-item>
+  <swiper-item >
+    <scroll-view scroll-y style='height:100%'>
+            <template is="wxParse" data="{{wxParseData:detail.nodes}}" />
+    </scroll-view>
+
+  </swiper-item>
+</swiper>

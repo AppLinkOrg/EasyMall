@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/goodscat/goodscat",
     "pages/home/home",
+    "pages/goodsdetail/goodsdetail",
+    "pages/goodscat/goodscat",
     "pages/product/product",
     "pages/auth/auth",
     "pages/success/success",
