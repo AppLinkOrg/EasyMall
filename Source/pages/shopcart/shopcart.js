@@ -1,6 +1,12 @@
-import { AppBase } from "../../appbase";
-import { ApiConfig } from "../../apis/apiconfig";
-import { InstApi } from "../../apis/inst.api.js";
+import {
+  AppBase
+} from "../../appbase";
+import {
+  ApiConfig
+} from "../../apis/apiconfig";
+import {
+  InstApi
+} from "../../apis/inst.api.js";
 var WxParse = require('../../wxParse/wxParse');
 
 class Content extends AppBase {
@@ -16,15 +22,30 @@ class Content extends AppBase {
   onMyShow() {
     var that = this;
     var instapi = new InstApi();
-    instapi.service({ id: that.Base.options.id }, function (service) {
-      service.content = that.Base.util.HtmlDecode(service.content);
-      that.Base.setMyData(service);
-      WxParse.wxParse('content', 'html', service.content, that, 10);
-    });
   }
+
+  setPageTitle(instinfo) {
+    wx.setNavigationBarTitle({
+      title: '购物车',
+    })
+  }
+
+  todetails(e) {
+    var name = e.currentTarget.dataset.name;
+    if (name == "guan") {
+      wx.switchTab({
+        url: '/pages/home/home',
+      })
+    }
+
+  }
+
+
+
 }
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
+body.todetails = content.todetails;
 Page(body)

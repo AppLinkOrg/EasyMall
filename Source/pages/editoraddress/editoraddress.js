@@ -1,3 +1,5 @@
+// pages/editoraddress/editoraddress.js
+
 import {
   AppBase
 } from "../../appbase";
@@ -22,11 +24,24 @@ class Content extends AppBase {
   onMyShow() {
     var that = this;
     var instapi = new InstApi();
-
   }
+
+  setPageTitle(instinfo) {
+    wx.setNavigationBarTitle({
+      title: '编辑地址',
+    })
+  }
+  bindRegionChange(e) {
+    this.Base.setMyData({
+      city: e.detail.value
+    })
+  }
+
 }
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
+body.bindRegionChange = content.bindRegionChange;
+
 Page(body)

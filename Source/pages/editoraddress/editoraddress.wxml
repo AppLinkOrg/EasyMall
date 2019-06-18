@@ -1,0 +1,42 @@
+<!--pages/editoraddress/editoraddress.wxml-->
+<view style='background:white;'>
+  <view class='hezi flex-row flex-center'>
+    <view style='width:25vw'>收货人</view>
+    <input style='width:60vw' placeholder='请输入收货人姓名'></input>
+  </view>
+  <view class='hx'></view>
+  <view class='hezi flex-row flex-center'>
+    <view style='width:25vw'>手机号码</view>
+    <input style='width:60vw' placeholder='请输入手机号码'></input>
+  </view>
+  <view class='hx'></view>
+
+  <view class='hezi flex-row flex-center'>
+    <view class='flex-row flex-center flex-1'>
+      <view style='width:25vw'>所在地区</view>
+      <picker mode="region" bindchange="bindRegionChange" style='width:60vw'>
+        <input disabled='false' value='{{city}}' placeholder='请选择所在城市'></input>
+      </picker>
+    </view>
+    <image class='icon-10' src='{{uploadpath}}resource/jiantou'></image>
+  </view>
+
+  <view class='hx'></view>
+  <textarea class='margin-30' style='width:92%;height:150rpx;' placeholder='详细地址：如道路、门牌号、小区、楼栋号、单元室等'></textarea>
+</view>
+
+
+<view style='background:white;'>
+  <view class='hezi flex-row flex-center'>
+    <view>设为默认地址</view>
+    <view class='flex-1'></view>
+    <switch class='h5'></switch>
+  </view>
+</view>
+
+<view class='margin-top-15' style='background:white;' >
+  <view class='hezi flex-row flex-center txt-red'>删除收货地址</view>
+</view>
+
+<view style='height:100rpx'></view>
+<button class='txt-white h5-1' style='width:75%;background:#F04848;border-radius:50rpx;'>保存</button>

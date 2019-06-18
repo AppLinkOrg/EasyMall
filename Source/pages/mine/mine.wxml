@@ -1,0 +1,141 @@
+<!--pages/mine/mine.wxml-->
+<view class=''>
+
+  <image src='{{uploadpath}}resource/mine_bg' class='bg_img'></image>
+  <view class='padding-40'></view>
+  <view class=' flex-row flex-column ' style='width:100%'>
+    <image class='icon-60 radius-50 ' style='border:4rpx solid #CECFCE' src='{{uploadpath}}resource/a'></image>
+    <view class='txt-black  txt-bold '>{{memberinfo.nickName}}长小江</view>
+  </view>
+
+  <view class='' style='height:20rpx'></view>
+
+</view>
+
+<view class='' style='height:50rpx'></view>
+
+
+<view class='hezi'>
+  <view class=' flex-row _center '>
+    <view>全部订单</view>
+    <view class='flex-1'></view>
+    <view data-name='all' bindtap='todetails' class='h6 txt-gray'>查看全部订单</view>
+    <image class='icon-13 ' src='{{uploadpath}}resource/jiantou'></image>
+  </view>
+  <view class='margin-top-20' style='height:1rpx;wdith:100%;background:#f0f0f0'></view>
+
+  <view class='flex-row '>
+    <view data-name='daifk' bindtap='todetails' show='{{show==1}}'>
+      <view class='flex-row  flex-column'>
+        <image class='margin-top icon-25' src='{{uploadpath}}resource/lala'></image>
+      </view>
+      <view class='h5 margin-top-5'>待付款</view>
+    </view>
+
+    <view class='flex-1'></view>
+
+    <view data-name='daifh' bindtap='todetails'>
+      <view class='flex-row flex-column'>
+        <image class='margin-top icon-25' src='{{uploadpath}}resource/lala'></image>
+      </view>
+      <view class='h5 margin-top-5'>待发货</view>
+    </view>
+
+    <view class='flex-1'></view>
+
+    <view data-name='daish' bindtap='todetails'>
+      <view class='flex-row flex-column'>
+        <image class='margin-top icon-25' src='{{uploadpath}}resource/lala'></image>
+      </view>
+      <view class='h5 margin-top-5'>待收货</view>
+    </view>
+    <view class='flex-1'></view>
+
+    <view data-name='daifk' bindtap='todetails'>
+      <view class='flex-row flex-column'>
+        <image class='margin-top icon-25' src='{{uploadpath}}resource/lala'></image>
+      </view>
+      <view class='h5 margin-top-5'>待评价</view>
+    </view>
+    <view class='flex-1'></view>
+
+    <view data-name='tuihuan' bindtap='todetails'>
+      <view class='flex-row flex-column'>
+        <image class='margin-top icon-25' src='{{uploadpath}}resource/lala'></image>
+      </view>
+      <view class='h5 margin-top-5'>退换货</view>
+    </view>
+    <view style='height:160rpx'></view>
+  </view>
+
+</view>
+
+
+<view class='hezi2'>
+  <view class='flex-row'>
+    <view data-name='youhuiquan' bindtap='todetails'>
+      <view class='flex-row flex-column'>
+        <image class='icon-25' src='{{uploadpath}}resource/lala'></image>
+      </view>
+      <view class='h5 margin-top-5'>我的礼券</view>
+    </view>
+    <view class='flex-1'></view>
+
+    <view data-name='shoucang' bindtap='todetails'>
+      <view class='flex-row flex-column'>
+        <image class='icon-25' src='{{uploadpath}}resource/lala'></image>
+      </view>
+      <view class='h5 margin-top-5'>我的收藏</view>
+    </view>
+    <view class='flex-1'></view>
+
+    <view data-name='address' bindtap='todetails'>
+      <view class='flex-row flex-column'>
+        <image class='icon-25' src='{{uploadpath}}resource/lala'></image>
+      </view>
+      <view class='h5 margin-top-5'>收货地址</view>
+    </view>
+    <view class='flex-1'></view>
+
+    <view data-name='bangding' bindtap='todetails'>
+      <view class='flex-row flex-column'>
+        <image class='icon-25' src='{{uploadpath}}resource/lala'></image>
+      </view>
+      <view class='h5 margin-top-5'>绑定手机</view>
+    </view>
+  </view>
+  <view class='flex-1'></view>
+
+  <view class='flex-row margin-top'>
+    <view data-name='about' bindtap='todetails'>
+      <view class='flex-row flex-column'>
+        <image class='icon-25' src='{{uploadpath}}resource/lala'></image>
+      </view>
+      <view class='h5 margin-top-5'>关于我们</view>
+    </view>
+    <view class='flex-1'></view>
+
+    <view data-name='kefu' bindtap='todetails'>
+      <view class='flex-row flex-column'>
+        <image class='icon-25' src='{{uploadpath}}resource/lala'></image>
+      </view>
+      <view class='h5 margin-top-5'>客服帮助</view>
+    </view>
+    <view class='flex-1'></view>
+
+    <view>
+      <view class='flex-row flex-column'>
+        <image class='icon-25' src='{{uploadpath}}resource/lala'></image>
+      </view>
+      <view class='h5 margin-top-5'>我的礼券</view>
+    </view>
+    <view class='flex-1'></view>
+
+    <view>
+      <view class='flex-row flex-column'>
+        <image class='icon-25' src='{{uploadpath}}resource/lala'></image>
+      </view>
+      <view class='h5 margin-top-5'>我的礼券</view>
+    </view>
+  </view>
+</view>

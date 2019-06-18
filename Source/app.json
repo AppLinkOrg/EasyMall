@@ -1,26 +1,29 @@
 {
-  "pages":[
+  "pages": [
     "pages/home/home",
     "pages/goodsdetail/goodsdetail",
     "pages/goodscat/goodscat",
-    "pages/product/product",
     "pages/auth/auth",
     "pages/success/success",
     "pages/signup/signup",
-    "pages/productlist/productlist",
     "pages/news/news",
-    "pages/service/service",
-    "pages/newslist/newslist",
+    "pages/mine/mine",
     "pages/aboutuslist/aboutuslist",
     "pages/aboutus/aboutus",
     "pages/index/index",
     "pages/servicelist/servicelist",
     "pages/member/member",
     "pages/content/content",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/shopcart/shopcart",
+    "pages/collect/collect",
+    "pages/address/address",
+    "pages/order/order",
+    "pages/addaddress/addaddress",
+    "pages/editoraddress/editoraddress"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "enablePullDownRefresh": true,
     "navigationBarBackgroundColor": "#f2f2f2",
     "navigationBarTextStyle": "black"
@@ -28,7 +31,7 @@
   "tabBar": {
     "color": "#999999",
     "selectedColor": "#F04848",
-    "borderStyle": "#eeeeee",
+    "borderStyle": "white",
     "backgroundColor": "#ffffff",
     "list": [
       {
@@ -44,23 +47,18 @@
         "selectedIconPath": "images/icons/catlist.png"
       },
       {
-        "text": "产品",
-        "pagePath": "pages/productlist/productlist",
-        "iconPath": "images/icons/find-o.png",
-        "selectedIconPath": "images/icons/find.png"
-      },
-      {
-        "text": "动态",
-        "pagePath": "pages/newslist/newslist",
+        "text": "购物车",
+        "pagePath": "pages/shopcart/shopcart",
         "iconPath": "images/icons/cart-o.png",
         "selectedIconPath": "images/icons/cart.png"
       },
       {
-        "text": "服务",
-        "pagePath": "pages/servicelist/servicelist",
+        "text": "我的",
+        "pagePath": "pages/mine/mine",
         "iconPath": "images/icons/user-o.png",
         "selectedIconPath": "images/icons/user.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

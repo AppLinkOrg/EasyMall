@@ -1,0 +1,29 @@
+/* pages/order/order.wxss */
+
+.hezi {
+  width: 18vw;
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+}
+
+.tou {
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100vw;
+  height: 9%;
+  background-color: rgb(242, 242, 242);
+}
+
+.hengxian {
+  height: 6rpx;
+  width: 18vw;
+}
+
+.noselect {
+  color: black;
+}
+
+.select {
+  color: #F04848;
+}

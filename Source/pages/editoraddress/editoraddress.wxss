@@ -1,0 +1,9 @@
+/* pages/editoraddress/editoraddress.wxss */
+.hezi{
+  padding: 30rpx;
+}
+.hx{
+  width: 100vw;
+  height: 1rpx;
+  background-color: #f0f0f0;
+}

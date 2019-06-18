@@ -1,0 +1,14 @@
+/* pages/address/address.wxss */
+.default{
+  background-color: rgb(241, 231, 230);
+  padding: 7rpx;
+  color: rgb(231, 41, 41);
+}
+.tianjia{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 8%;
+  border-radius: 5rpx;
+  background-color: #F04848;
+}

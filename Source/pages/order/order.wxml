@@ -1,0 +1,32 @@
+<!--pages/order/order.wxml-->
+<view class='flex-row tou'>
+  <view class='hezi'>
+    <view class='{{show==1?"select":"noselect"}}' data-type='1' bindtap='bindqh'>全部</view>
+    <view wx:if='{{show!=1}}' class='margin-top-10 hengxian'></view>
+    <view wx:if='{{show==1}}' style='background:#F04848' class='hengxian margin-top-10'></view>
+  </view>
+
+  <view class='hezi'>
+    <view class='{{show==2?"select":"noselect"}}' data-type='2' bindtap='bindqh'>待付款</view>
+    <view wx:if='{{show!=2}}' class='margin-top-10 hengxian'></view>
+    <view wx:if='{{show==2}}' style='background:#F04848' class='hengxian margin-top-10'></view>
+  </view>
+
+  <view class='hezi'>
+    <view class='{{show==3?"select":"noselect"}}' data-type='3' bindtap='bindqh'>待发货</view>
+    <view wx:if='{{show!=3}}' class='margin-top-10 hengxian'></view>
+    <view wx:if='{{show==3}}' style='background:#F04848' class='hengxian margin-top-10'></view>
+  </view>
+
+  <view class='hezi'>
+    <view class='{{show==4?"select":"noselect"}}' data-type='4' bindtap='bindqh'>待收货</view>
+    <view wx:if='{{show!=4}}' class='margin-top-10 hengxian'></view>
+    <view wx:if='{{show==4}}' style='background:#F04848' class='hengxian margin-top-10'></view>
+  </view>
+
+  <view class='hezi'>
+    <view class='{{show==5?"select":"noselect"}}' data-type='5' bindtap='bindqh'>待评价</view>
+    <view wx:if='{{show!=5}}' class='margin-top-10 hengxian'></view>
+    <view wx:if='{{show==5}}' style='background:#F04848' class='hengxian margin-top-10'></view>
+  </view>
+</view>
