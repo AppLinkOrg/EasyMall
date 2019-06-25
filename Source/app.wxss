@@ -210,22 +210,26 @@ button[disabled][type=primary] {
 }
 
 .margin-top-10 {
-  margin-top: 20rpx;
+  margin-top: 10rpx;
 }
 
 .margin-top-20 {
+  margin-top: 20rpx;
+}
+
+.margin-top-40 {
   margin-top: 40rpx;
 }
 
-.margin-top-15 {
+.margin-top-30 {
   margin-top: 30rpx;
 }
 
-.margin-top-30 {
+.margin-top-60 {
   margin-top: 60rpx;
 }
 
-.margin-top-5 {
+.margin-top-10 {
   margin-top: 10rpx;
 }
 
@@ -984,6 +988,10 @@ button[disabled][type=primary] {
   margin-right: 20rpx;
 }
 
+.margin-right-30 {
+  margin-right: 30rpx;
+}
+
 .margin-right-40 {
   margin-right: 40rpx;
 }
@@ -1135,4 +1143,8 @@ button[disabled][type=primary] {
 
 .text-line-through {
   text-decoration: line-through;
+}
+
+.to-red{
+  color: #FF5A00;
 }

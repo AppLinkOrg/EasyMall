@@ -1,8 +1,16 @@
 // pages/content/content.js
-import { AppBase } from "../../appbase";
-import { ApiConfig } from "../../apis/apiconfig";
-import { InstApi } from "../../apis/inst.api.js";
-import { GoodsApi } from "../../apis/goods.api.js";
+import {
+  AppBase
+} from "../../appbase";
+import {
+  ApiConfig
+} from "../../apis/apiconfig";
+import {
+  InstApi
+} from "../../apis/inst.api.js";
+import {
+  GoodsApi
+} from "../../apis/goods.api.js";
 
 class Content extends AppBase {
   constructor() {
@@ -15,15 +23,15 @@ class Content extends AppBase {
   }
   onMyShow() {
     var that = this;
-    var instapi=new InstApi();
-    instapi.indexbanner({},(indexbanner)=>{
+    var instapi = new InstApi();
+    instapi.indexbanner({}, (indexbanner) => {
       var topbanner = [];
       var bottombanner = [];
-      var mlbanner=null;
+      var mlbanner = null;
       var mrtbanner = null;
       var mrbbanner = null;
-      for(var i=0;i<indexbanner.length;i++){
-        if(indexbanner[i].position=="top"){
+      for (var i = 0; i < indexbanner.length; i++) {
+        if (indexbanner[i].position == "top") {
           topbanner.push(indexbanner[i]);
         } else if (indexbanner[i].position == "middleleft") {
           mlbanner = indexbanner[i];
@@ -35,15 +43,41 @@ class Content extends AppBase {
           bottombanner.push(indexbanner[i]);
         }
       }
-      that.Base.setMyData({ topbanner, mlbanner, mrtbanner, mrbbanner, bottombanner });
-    }); 
+      that.Base.setMyData({
+        topbanner,
+        mlbanner,
+        mrtbanner,
+        mrbbanner,
+        bottombanner
+      });
 
-    var goodsapi=new GoodsApi();
-    goodsapi.catlist({inhome:"Y"},(catlist)=>{
-      that.Base.setMyData({ catlist: catlist });
+      instapi.productlist({}, (productlist) => {
+        that.Base.setMyData({
+          productlist: productlist
+        });
+      });
+
+
+    });
+
+    var goodsapi = new GoodsApi();
+    goodsapi.classifylist({}, (classifylist) => {
+      console.log(classifylist)
+      this.Base.setMyData({
+        classifylist: classifylist
+      });
+    })
+    goodsapi.catlist({
+      // inhome: "Y"
+    }, (catlist) => {
+      that.Base.setMyData({
+        catlist: catlist
+      });
     });
     goodsapi.recommgoodscat({}, (recommgoodscat) => {
-      that.Base.setMyData({ recommgoodscat: recommgoodscat });
+      that.Base.setMyData({
+        recommgoodscat: recommgoodscat
+      });
     });
   }
 

@@ -5,7 +5,7 @@
   <view class='padding-40'></view>
   <view class=' flex-row flex-column ' style='width:100%'>
     <image class='icon-60 radius-50 ' style='border:4rpx solid #CECFCE' src='{{uploadpath}}resource/a'></image>
-    <view class='txt-black  txt-bold '>{{memberinfo.nickName}}长小江</view>
+    <view class='txt-black  txt-bold margin-top-10'>{{memberinfo.nickName}}长小江</view>
   </view>
 
   <view class='' style='height:20rpx'></view>

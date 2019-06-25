@@ -25,27 +25,27 @@
 
 
 <view class='flex-row tabs margin-top-10'>
-    <view class='flex-1 tab  flex-row ' bindtap='changeTab' id="0">
-      <view class='flex-1'></view>
-      <view class='tabtext {{currenttab==0?"active":""}}'>概述</view>
-      <view class='flex-1'></view>
-    </view>
-    <view class='flex-1 tab  flex-row ' bindtap='changeTab' id="1">
-      <view class='flex-1'></view>
-      <view class='tabtext {{currenttab==1?"active":""}}'>参数</view>
-      <view class='flex-1'></view>
-    </view>
+  <view class='flex-1 tab  flex-row ' bindtap='changeTab' id="0">
+    <view class='flex-1'></view>
+    <view class='tabtext {{currenttab==0?"active":""}}'>概述</view>
+    <view class='flex-1'></view>
+  </view>
+  <view class='flex-1 tab  flex-row ' bindtap='changeTab' id="1">
+    <view class='flex-1'></view>
+    <view class='tabtext {{currenttab==1?"active":""}}'>参数</view>
+    <view class='flex-1'></view>
+  </view>
 </view>
 <swiper indicator-dots="{{false}}" class='bottomtabs ' current='{{currenttab}}' bindchange="changeCurrentTab" class="maintab">
-  <swiper-item >
+  <swiper-item>
     <scroll-view scroll-y style='height:100%'>
-            <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+      <template is="wxParse" data="{{wxParseData:content.nodes}}" />
     </scroll-view>
 
   </swiper-item>
-  <swiper-item >
+  <swiper-item>
     <scroll-view scroll-y style='height:100%'>
-            <template is="wxParse" data="{{wxParseData:detail.nodes}}" />
+      <template is="wxParse" data="{{wxParseData:detail.nodes}}" />
     </scroll-view>
 
   </swiper-item>

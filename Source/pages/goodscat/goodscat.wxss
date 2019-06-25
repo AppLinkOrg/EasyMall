@@ -1,5 +1,50 @@
 /* pages/goodscat/goodscat.wxss */
-.item{
-  width: 33.3%;
-  margin-top: 30rpx;
+
+.search {
+  padding: 10rpx;
+  margin: 20rpx;
+  width: 90%;
+  background-color: rgb(245, 245, 245);
+  border-radius: 50rpx;
+}
+
+.box {
+  width: 20%;
+  padding: 20rpx;
+}
+
+.hezi {
+  margin-left: 26rpx;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+  background-color: white;
+  width: 45%;
+}
+
+.img {
+  width: 338rpx;
+  height: 338rpx;
+  border-radius: 10rpx 10rpx 0rpx 0rpx;
+}
+
+.pad {
+  padding-left: 20rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  padding-right: 20rpx;
+}
+
+.over {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.rank{
+  width: 40rpx;
+  height: 40rpx;
 }

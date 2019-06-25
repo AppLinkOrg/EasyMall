@@ -1,5 +1,95 @@
 <!--pages/goodscat/goodscat.wxml-->
-<view class='flex-row'>
+<!-- <view style='height:10rpx;background:#f0f0f0'></view> -->
+<view class='flex-row flex-center white-block' style='height:100rpx'>
+  <view class='flex-1'></view>
+  <view class='flex-row search _center'>
+    <image class='icon' style='margin-right:10rpx;' src='{{uploadpath}}resource/search'></image>
+    <view class=' h5 txt-gray'>请输入商品关键字</view>
+  </view>
+  <view class='flex-1'></view>
+</view>
+
+<view class='white-block' style='height:180rpx'>
+
+  <scroll-view scroll-x scroll-with-animation="{{true}}" bindscroll="scroll" style='height:100rpx;width:750rpx;padding-left:10rpx;white-space:nowrap;'>
+
+    <view class='flex-center flex-row '>
+
+      <view class='flex-row flex-column'>
+        <view class='padding-20' style='color:#FF5A00'>全部商品</view>
+        <view style='width:80rpx;height:4rpx;background:#FF5A00'></view>
+      </view>
+
+      <view class='flex-row flex-column' style='min-width:150rpx' wx:for='{{classifylist}}' wx:key="k">
+        <view class='padding-20' bindtap='catclick'>{{item.name}}</view>
+        <view style='width:80rpx;height:4rpx;'></view>
+        <!-- <view style='width:80rpx;height:4rpx;background:#FF5A00'></view> -->
+      </view>
+    </view>
+
+  </scroll-view>
+
+  <view style='height:2rpx;background:#f0f0f0;'></view>
+
+  <view class='flex-row flex-center'>
+    <view class='box _center h5' style='color:#FF5A00'>默认</view>
+    <view class='box _center '>
+      <view  class='{{jiage!=1?"to-red":""}} h5' bindtap='bindjiage' >价格</view>
+      <image wx:if='{{jiage==1}}' class='rank' src='{{uploadpath}}resource/rank'></image>
+      <image wx:if='{{jiage==2}}' class='rank' src='{{uploadpath}}resource/rankmax'></image>
+      <image wx:if='{{jiage==3}}' class='rank' src='{{uploadpath}}resource/rankmin'></image>
+    </view>
+    <view class='box _center '>
+      <view  class='{{jiage!=1?"to-red":""}} h5' bindtap='bindxiaoliang'>销量</view>
+      <image wx:if='{{xiaoliang==1}}' class='rank' src='{{uploadpath}}resource/rank'></image>
+      <image wx:if='{{xiaoliang==2}}' class='rank' src='{{uploadpath}}resource/rankmax'></image>
+      <image wx:if='{{xiaoliang==3}}' class='rank' src='{{uploadpath}}resource/rankmin'></image>
+    </view>
+    <view class='box _center '>
+      <view class='{{jiage!=1?"to-red":""}} h5' bindtap='bindxinpin'>新品</view>
+      <image wx:if='{{xinpin==1}}' class='rank' src='{{uploadpath}}resource/rank'></image>
+      <image wx:if='{{xinpin==2}}' class='rank' src='{{uploadpath}}resource/rankmax'></image>
+      <image wx:if='{{xinpin==3}}' class='rank' src='{{uploadpath}}resource/rankmin'></image>
+    </view>
+    <image style='width:30rpx;height:30rpx' class='box margin-right-30' src='{{uploadpath}}resource/way1'></image>
+  </view>
+
+</view>
+
+<view class='flex-row flex-wrap' style='margin-bottom:30rpx'>
+  <view class='hezi' wx:for="{{catlist}}" wx:key="k">
+    <image class='img' src='{{uploadpath}}product/{{item.cover}}'></image>
+    <view class='pad'>
+      <view class='h6 over' style='min-height:64rpx'>{{item.summary}}</view>
+      <view class='flex-row flex-center margin-top-10'>
+        <view class='h6' style='color:rgb(255,90,0)'>{{item.pricestr}}</view>
+        <view class='h6 margin-left-10'>377件已售</view>
+        <view class='flex-1'></view>
+        <image style='width:30rpx;height:30rpx' src='{{uploadpath}}resource/shop_min'></image>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <view class='flex-row'>
   <view style='width:200rpx;margin-right:4rpx;' class='white-block'>
     <scroll-view scroll-y style='height:100vh;width:100%' class='text-center'>
       <view wx:for="{{catlist}}" wx:key="k" wx:for-index="idx" class='padding-20 {{item.active=="Y"?"txt-primary":"h5"}}' id="{{idx}}" bindtap='catclick'>
@@ -35,4 +125,4 @@
       <view style='height:40rpx;'></view>
     </scroll-view>
   </view>
-</view>
+</view> -->

@@ -27,7 +27,6 @@ class Content extends AppBase {
       var content = that.Base.util.HtmlDecode(info.content);
       WxParse.wxParse('content', 'html', content, that, 10);
 
-
       var detail = that.Base.util.HtmlDecode(info.detail);
       WxParse.wxParse('detail', 'html', detail, that, 10);
 
