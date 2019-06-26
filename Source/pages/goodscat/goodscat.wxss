@@ -29,7 +29,6 @@
 
 .pad {
   padding-left: 20rpx;
-  padding-top: 10rpx;
   padding-bottom: 10rpx;
   padding-right: 20rpx;
 }
@@ -44,7 +43,11 @@
   -webkit-box-orient: vertical;
 }
 
-.rank{
+.rank {
   width: 40rpx;
   height: 40rpx;
+}
+
+.tored {
+  background: #ff5a00;
 }

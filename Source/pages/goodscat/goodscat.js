@@ -23,7 +23,8 @@ class Content extends AppBase {
     this.Base.setMyData({
       jiage: 1,
       xiaoliang: 1,
-      xinpin: 1
+      xinpin: 1,
+      shunxu: 0
     });
   }
   onMyShow() {
@@ -49,25 +50,47 @@ class Content extends AppBase {
     var jiage = this.Base.getMyData().jiage;
     if (jiage == 1) {
       this.Base.setMyData({
-        jiage: 2
+        jiage: 2,
+        xiaoliang: 1,
+        xinpin: 1,
+        moren: 1
       })
-      this.Base.setMyData({
-        xiaoliang: 1
-      });
     }
     if (jiage == 2) {
-      this.Base.setMyData({
-        jiage: 3
+
+      var goodsapi = new GoodsApi();
+      goodsapi.catlist({
+        orderby: "r_main.pricestr"
+      }, (catlist) => {
+        console.log(catlist)
+        this.Base.setMyData({
+          catlist: catlist
+        });
       })
+
       this.Base.setMyData({
-        xiaoliang: 1
-      });
+        jiage: 3,
+        xiaoliang: 1,
+        xinpin: 1,
+        moren: 1
+      })
     }
     if (jiage == 3) {
-      this.Base.setMyData({
-        jiage: 1
+      var goodsapi = new GoodsApi();
+      goodsapi.catlist({
+        orderby: "r_main.pricestr desc"
+      }, (catlist) => {
+        console.log(catlist)
+        this.Base.setMyData({
+          catlist: catlist
+        });
       })
-      this.onMyShow();
+      this.Base.setMyData({
+        jiage: 2,
+        xiaoliang: 1,
+        xinpin: 1,
+        moren: 1
+      })
     }
   }
 
@@ -76,21 +99,36 @@ class Content extends AppBase {
     var xiaoliang = this.Base.getMyData().xiaoliang;
     if (xiaoliang == 1) {
       this.Base.setMyData({
-        xiaoliang: 2
+        xiaoliang: 2,
+        jiage: 1,
+        xinpin: 1,
+        moren: 1
       })
-      this.onMyShow();
     }
     if (xiaoliang == 2) {
       this.Base.setMyData({
-        xiaoliang: 3
+        xiaoliang: 3,
+        jiage: 1,
+        xinpin: 1,
+        moren: 1
       })
-      this.onMyShow();
     }
     if (xiaoliang == 3) {
-      this.Base.setMyData({
-        xiaoliang: 1
+      var goodsapi = new GoodsApi();
+      goodsapi.catlist({
+        orderby: "r_main.pricestr desc"
+      }, (catlist) => {
+        console.log(catlist)
+        this.Base.setMyData({
+          catlist: catlist
+        });
       })
-      this.onMyShow();
+      this.Base.setMyData({
+        xiaoliang: 2,
+        jiage: 1,
+        xinpin: 1,
+        moren: 1
+      })
     }
   }
 
@@ -99,20 +137,101 @@ class Content extends AppBase {
     var xinpin = this.Base.getMyData().xinpin;
     if (xinpin == 1) {
       this.Base.setMyData({
-        xinpin: 2
+        xinpin: 2,
+        jiage: 1,
+        xiaoliang: 1,
+        moren: 1
       })
-
     }
     if (xinpin == 2) {
+      var goodsapi = new GoodsApi();
+      goodsapi.catlist({
+        orderby: "r_main.created_date"
+      }, (catlist) => {
+        console.log(catlist)
+        this.Base.setMyData({
+          catlist: catlist
+        });
+      })
       this.Base.setMyData({
-        xinpin: 3
+        xinpin: 3,
+        jiage: 1,
+        xiaoliang: 1,
+
+        moren: 1
       })
     }
     if (xinpin == 3) {
+      var goodsapi = new GoodsApi();
+      goodsapi.catlist({
+        orderby: "r_main.created_date desc"
+      }, (catlist) => {
+        console.log(catlist)
+        this.Base.setMyData({
+          catlist: catlist
+        });
+      })
       this.Base.setMyData({
-        xinpin: 1
+        xinpin: 2,
+        jiage: 1,
+        xiaoliang: 1,
+        moren: 1
       })
     }
+  }
+
+  bindmoren(e) {
+    this.Base.setMyData({
+      xinpin: 1,
+      jiage: 1,
+      xiaoliang: 1,
+      moren: 0
+    })
+  }
+
+  catclick(e) {
+    var that = this;
+    var name = e.currentTarget.dataset.name;
+    var id = e.currentTarget.id;
+    // var idx = e.currentTarget.dataset.idx; 
+    var goodsapi = new GoodsApi;
+    if (name == 'all') {
+      goodsapi.catlist({}, (catlist) => {
+        console.log(catlist)
+        this.Base.setMyData({
+          catlist: catlist,
+          shunxu: 0
+        });
+      })
+    } else {
+      goodsapi.catlist({
+        cat_id: id
+      }, (catlist) => {
+        console.log(catlist)
+        this.Base.setMyData({
+          catlist: catlist
+        });
+      })
+    }
+
+    this.Base.setMyData({
+      shunxu: id
+    })
+
+
+  }
+
+  todetails(e) {
+    var id = e.currentTarget.id;
+    var instsapi = new InstApi();
+    instsapi.productlist({
+      id: id
+    }, (productlist) => {
+      console.log(productlist)
+      this.Base.setMyData({
+        catlist: productlist
+      });
+    })
   }
 
 
@@ -125,4 +244,6 @@ body.catclick = content.catclick;
 body.bindjiage = content.bindjiage;
 body.bindxiaoliang = content.bindxiaoliang;
 body.bindxinpin = content.bindxinpin;
+body.catclick = content.catclick;
+body.bindmoren = content.bindmoren;
 Page(body)
