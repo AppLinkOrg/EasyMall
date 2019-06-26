@@ -1,5 +1,68 @@
 /* pages/goodsdetail/goodsdetail.wxss */
-.photo{
+
+.photo {
   width: 750rpx;
   height: 825rpx;
+}
+
+.red {
+  color: #ff5a00;
+}
+
+.f36 {
+  font-size: 36rpx;
+}
+
+.shoucang {
+  background-color: #f0f0f0;
+  border-radius: 50rpx 0 0 50rpx;
+  padding: 6rpx;
+  height: 36rpx;
+  width: 15%;
+}
+
+.icon-36 {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.icon-30 {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.icon-40 {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.icon-50 {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.dilan {
+  background-color: white;
+  position: fixed;
+  z-index: 100;
+  left: 0px;
+  border-top: 2rpx solid #f0f0f0;
+  bottom: 0px;
+  width: 100vw;
+  height: 100rpx;
+}
+
+.gwc {
+  height: 70rpx;
+  width: 250rpx;
+  background-color: rgb(255, 192, 2);
+  border-radius: 50rpx 0 0 50rpx;
+}
+
+.goumai {
+  height: 70rpx;
+  width: 250rpx;
+  margin-right: 20rpx;
+  background-color: rgb(255, 111, 1);
+  border-radius: 0 50rpx 50rpx 0;
 }

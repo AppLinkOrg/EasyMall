@@ -2,29 +2,126 @@
 <import src="../../wxParse/wxParse.wxml" />
 
 <view>
-  <swiper indicator-dots="false" autoplay="{{true}}" interval="5000" duration="1000" style='height:825rpx;' indicator-color="rgba(0,0,0,0.3)" indicator-active-color='white'>
-    <block wx:for="{{photos}}" wx:key="k">
-      <swiper-item>
-        <image class='photo' src="{{uploadpath}}goods/{{item.photo}}" />
-      </swiper-item>
-    </block>
-  </swiper>
-</view>
-<view class='padding-20 white-block'>
   <view>
-    {{name}}
+    <swiper indicator-dots="false" autoplay="{{true}}" interval="5000" duration="1000" style='height:660rpx;' indicator-color="rgba(0,0,0,0.3)" indicator-active-color='white'>
+      <block wx:for="{{topbanner}}" wx:key="k">
+        <swiper-item>
+          <image class='photo' src="{{uploadpath}}indexbanner/{{item.img}}" />
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
-  <view class='h6 txt-gray margin-top-10'>
-    {{summary}}
+  <view class='white-block' style='padding-left:20rpx;padding-top:20rpx;padding-bottom:20rpx;'>
+    <view class='f36 red'>￥{{info.pricestr}}</view>
+    <view class='flex-row'>
+      <view class='h6 txt-gray' style='text-decoration:line-through;'>原价：</view>
+      <view class='h6 txt-gray' style='text-decoration:line-through;'>{{info.oripricestr}}</view>
+      <view class='h6 txt-gray' style='margin-left:120rpx'>现价：{{info.oripricestr}}</view>
+    </view>
+    <view class='flex-row flex-center'>
+      <view class='h5 margin-top-10 txt-bold' style='width:80%'>{{info.name}}</view>
+      <view class='flex-1'></view>
+      <view class='flex-row shoucang '>
+        <image class='icon-36' src='{{uploadpath}}resource/minsc'></image>
+        <view class='txt-gray h6'>收藏</view>
+      </view>
+    </view>
+
+    <view class='txt-gray h6 margin-top-20'>销量：260件</view>
   </view>
-  <view class='margin-top-10 flex-row flex-bottom'>
-    <view class='txt-primary ' style='margin-right:10rpx;'>{{pricestr}}</view>
-    <view class='txt-gray h6 text-line-through'>{{oripricestr}}</view>
+
+  <view class='white-block padding-20 flex-row flex-center' style='margin-top:2rpx'>
+    <view class='txt-gray h5'>选择</view>
+    <view class='h5 margin-left-20'>颜色分类</view>
+    <view class='h5 margin-left-10'>尺码</view>
+    <view class='flex-1'></view>
+    <image class='icon-10' src='{{uploadpath}}resource/jiantou'></image>
   </view>
+
+
+  <view class='_center margin-20'>
+    <view class='flex-row flex-center'>
+      <view style='background:#bfbfbf;width:100rpx;height:2rpx'></view>
+      <image class='icon-30 margin-left-10 margin-right-10' src='{{uploadpath}}resource/shop_pingjia'></image>
+      <view class='txt-gray h6 margin-right-10'>评价</view>
+      <view style='background:#bfbfbf;width:100rpx;height:2rpx'></view>
+    </view>
+  </view>
+
+  <view class='h5 padding-20 white-block'>宝贝评价（0）</view>
+
+
+  <view class='_center margin-20'>
+    <view class='flex-row flex-center'>
+      <view style='background:#bfbfbf;width:100rpx;height:2rpx'></view>
+      <image class='icon-30 margin-left-10 margin-right-10' src='{{uploadpath}}resource/shop_xiangqing'></image>
+      <view class='txt-gray h6 margin-right-10'>详情</view>
+      <view style='background:#bfbfbf;width:100rpx;height:2rpx'></view>
+    </view>
+  </view>
+
+  <view class='white-block' style='height:20rpx'></view>
+
+  <view class='white-block'>
+    <image class='margin-20'></image>
+  </view>
+
+
+  <view class='dilan flex-row'>
+
+
+    <view class='flex-row flex-column margin-left-40 margin-top-10 '>
+      <image class='icon-36  ' src='{{uploadpath}}resource/maxsc'></image>
+      <view class='h5'>收藏</view>
+    </view>
+    <view class='flex-row flex-column margin-left-20 margin-top-10'>
+      <image class='icon-36' src='{{uploadpath}}resource/shop_gwc'></image>
+      <view class='h5'>购物车</view>
+    </view>
+
+
+    <view class='flex-1'></view>
+
+    <view class='_center flex-row'>
+      <view class='gwc txt-white _center'>加入购物车</view>
+      <view class='goumai txt-white _center'>立即购买</view>
+    </view>
+
+  </view>
+
+
 </view>
 
 
-<view class='flex-row tabs margin-top-10'>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <view class='flex-row tabs margin-top-10'>
   <view class='flex-1 tab  flex-row ' bindtap='changeTab' id="0">
     <view class='flex-1'></view>
     <view class='tabtext {{currenttab==0?"active":""}}'>概述</view>
@@ -49,4 +146,4 @@
     </scroll-view>
 
   </swiper-item>
-</swiper>
+</swiper> -->

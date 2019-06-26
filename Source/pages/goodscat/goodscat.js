@@ -20,23 +20,56 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
-    this.Base.setMyData({
-      jiage: 1,
-      xiaoliang: 1,
-      xinpin: 1,
-      shunxu: 0
-    });
+    if (this.Base.options.type == undefined) {
+      this.Base.setMyData({
+        jiage: 1,
+        xiaoliang: 1,
+        xinpin: 1,
+        shunxu: 0,
+        shop: 1,
+        cat: this.Base.options.type
+      });
+    } else {
+      this.Base.setMyData({
+        jiage: 1,
+        xiaoliang: 1,
+        xinpin: 1,
+        shop: 1,
+        shunxu: this.Base.options.type,
+
+      });
+    }
+
+
+    console.log(this.Base.options.type + "删掉了反馈")
   }
   onMyShow() {
     var that = this;
     var catlist = this.Base.getMyData().catlist;
     var goodsapi = new GoodsApi();
-    goodsapi.catlist({}, (catlist) => {
-      console.log(catlist)
-      this.Base.setMyData({
-        catlist: catlist
-      });
-    })
+    var fenlei = this.Base.options.type;
+    console.log(fenlei + "的考卷返回")
+    if (fenlei == undefined) {
+      // console.log("啦啦啦啦啦");
+      console.log(fenlei);
+      goodsapi.catlist({}, (catlist) => {
+        console.log(catlist)
+        this.Base.setMyData({
+          catlist: catlist
+        });
+      })
+    } else {
+      goodsapi.catlist({
+        cat_id: fenlei
+      }, (catlist) => {
+        console.log(catlist)
+        this.Base.setMyData({
+          catlist: catlist
+        });
+      })
+    }
+
+
     goodsapi.classifylist({}, (classifylist) => {
       console.log(classifylist)
       this.Base.setMyData({
@@ -48,7 +81,18 @@ class Content extends AppBase {
   bindjiage(e) {
     // var name = e.currentTarget.dataset.name;
     var jiage = this.Base.getMyData().jiage;
+    var id = e.currentTarget.id;
     if (jiage == 1) {
+      var goodsapi = new GoodsApi();
+      // goodsapi.catlist({
+      //   cat: id,
+      //   orderby: "r_main.pricestr"
+      // }, (catlist) => {
+      //   console.log(catlist)
+      //   this.Base.setMyData({
+      //     catlist: catlist
+      //   });
+      // })
       this.Base.setMyData({
         jiage: 2,
         xiaoliang: 1,
@@ -57,7 +101,6 @@ class Content extends AppBase {
       })
     }
     if (jiage == 2) {
-
       var goodsapi = new GoodsApi();
       goodsapi.catlist({
         orderby: "r_main.pricestr"
@@ -67,7 +110,6 @@ class Content extends AppBase {
           catlist: catlist
         });
       })
-
       this.Base.setMyData({
         jiage: 3,
         xiaoliang: 1,
@@ -77,6 +119,7 @@ class Content extends AppBase {
     }
     if (jiage == 3) {
       var goodsapi = new GoodsApi();
+       
       goodsapi.catlist({
         orderby: "r_main.pricestr desc"
       }, (catlist) => {
@@ -136,6 +179,15 @@ class Content extends AppBase {
     // var name = e.currentTarget.dataset.name;
     var xinpin = this.Base.getMyData().xinpin;
     if (xinpin == 1) {
+      var goodsapi = new GoodsApi();
+      goodsapi.catlist({
+        orderby: "r_main.created_date"
+      }, (catlist) => {
+        console.log(catlist)
+        this.Base.setMyData({
+          catlist: catlist
+        });
+      })
       this.Base.setMyData({
         xinpin: 2,
         jiage: 1,
@@ -157,7 +209,6 @@ class Content extends AppBase {
         xinpin: 3,
         jiage: 1,
         xiaoliang: 1,
-
         moren: 1
       })
     }
@@ -181,11 +232,16 @@ class Content extends AppBase {
   }
 
   bindmoren(e) {
-    this.Base.setMyData({
-      xinpin: 1,
-      jiage: 1,
-      xiaoliang: 1,
-      moren: 0
+    var goodsapi = new GoodsApi;
+    goodsapi.catlist({}, (catlist) => {
+      console.log(catlist)
+      this.Base.setMyData({
+        catlist: catlist,
+        xinpin: 1,
+        jiage: 1,
+        xiaoliang: 1,
+        moren: 0
+      });
     })
   }
 
@@ -223,15 +279,23 @@ class Content extends AppBase {
 
   todetails(e) {
     var id = e.currentTarget.id;
-    var instsapi = new InstApi();
-    instsapi.productlist({
-      id: id
-    }, (productlist) => {
-      console.log(productlist)
-      this.Base.setMyData({
-        catlist: productlist
-      });
+    wx.navigateTo({
+      url: '/pages/goodsdetail/goodsdetail?id='+id,
     })
+  }
+
+  bindimg(e) {
+    var shop = this.Base.getMyData().shop;
+    if (shop == 1) {
+      this.Base.setMyData({
+        shop: 2
+      })
+    }
+    if (shop == 2) {
+      this.Base.setMyData({
+        shop: 1
+      })
+    }
   }
 
 
@@ -246,4 +310,6 @@ body.bindxiaoliang = content.bindxiaoliang;
 body.bindxinpin = content.bindxinpin;
 body.catclick = content.catclick;
 body.bindmoren = content.bindmoren;
+body.bindimg = content.bindimg;
+body.todetails = content.todetails;
 Page(body)

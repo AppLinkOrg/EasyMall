@@ -21,10 +21,25 @@
   width: 45%;
 }
 
+.hezi1 {
+  margin-left: 26rpx;
+  margin-top: 20rpx;
+  margin-right: 26rpx;
+  /* margin-bottom: 20rpx; */
+  border-radius: 10rpx;
+  
+}
+
 .img {
   width: 338rpx;
   height: 338rpx;
   border-radius: 10rpx 10rpx 0rpx 0rpx;
+}
+
+.img1 {
+  min-width: 240rpx;
+  height: 240rpx;
+  border-radius: 10rpx;
 }
 
 .pad {

@@ -229,10 +229,6 @@ button[disabled][type=primary] {
   margin-top: 60rpx;
 }
 
-.margin-top-10 {
-  margin-top: 10rpx;
-}
-
 .border-radius-50 {
   border-radius: 50%;
 }
@@ -964,10 +960,6 @@ button[disabled][type=primary] {
   height: 150rpx;
 }
 
-.margin-top-10 {
-  margin-top: 20rpx;
-}
-
 .margin-top-5 {
   margin-top: 10rpx;
 }
@@ -1145,6 +1137,6 @@ button[disabled][type=primary] {
   text-decoration: line-through;
 }
 
-.to-red{
-  color: #FF5A00;
+.to-red {
+  color: #ff5a00;
 }

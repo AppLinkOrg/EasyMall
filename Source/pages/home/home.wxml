@@ -23,11 +23,9 @@
 
 <view class='white-block flex-row flex-wrap ' style='padding-top:40rpx;'>
   <view class='cat-item' wx:for="{{classifylist}}" wx:key="k">
-    <view>
+    <view  bindtap='bindfenlei' id='{{item.id}}'>
       <image class='icon-50' src='{{uploadpath}}productcat/{{item.logo}}'></image>
-    </view>
-    <view class='h5' style='margin-top:6rpx;'>
-      {{item.name}}
+      <view class='h5' style='margin-top:6rpx;'>{{item.name}}</view>
     </view>
   </view>
 </view>
@@ -35,7 +33,7 @@
 
 
 <view class='margin-top-10 white-block'>
-  <view class='padding-20' >今日必买</view>
+  <view class='padding-20'>今日必买</view>
   <view class='flex-row flex-wrap margin-40'>
     <view style='padding-bottom:40rpx'>
       <navigator url='/pages/goodsdetail/goodsdetail?id={{item.product_id}}' class='line-height-0'>
@@ -50,7 +48,7 @@
         <image style='width:300rpx;height:216rpx;border-radius:30rpx' src='{{uploadpath}}indexbanner/{{mrtbanner.img}}'></image>
       </navigator>
     </view>
-    
+
 
   </view>
 </view>

@@ -20,8 +20,8 @@
         <view class='{{shunxu==0?"tored":""}}' style='width:80rpx;height:4rpx;'></view>
       </view>
       <view class='flex-row flex-column' style='min-width:150rpx' wx:for='{{classifylist}}' wx:key="k">
-        <view class='padding-20 {{shunxu==item.id?"to-red":""}}' id="{{item.id}}" data-idx="{{idx}}" bindtap='catclick'>{{item.name}}</view>
-        <view class='{{shunxu==item.id?"tored":""}}' style='width:80rpx;height:4rpx;'></view>
+        <view class='padding-20 {{shunxu==item.id||cat==item.id?"to-red":""}}' id="{{item.id}}" data-idx="{{idx}}" bindtap='catclick'>{{item.name}}</view>
+        <view class='{{shunxu==item.id||cat==item.id?"tored":""}}' style='width:80rpx;height:4rpx;'></view>
         <!-- <view style='width:80rpx;height:4rpx;background:#FF5A00'></view> -->
       </view>
     </view>
@@ -36,26 +36,26 @@
       <view class='{{jiage!=1?"to-red":""}} h5' bindtap='bindjiage'>价格</view>
       <image wx:if='{{jiage==1}}' class='rank' src='{{uploadpath}}resource/rank'></image>
       <image wx:if='{{jiage==2}}' class='rank' src='{{uploadpath}}resource/rankmax'></image>
-      <image wx:if='{{jiage==3}}' class='rank' src='{{uploadpath}}resource/rankmin'></image>
+      <image wx:if='{{jiage==3}}' class='rank' src='{{uploadpath}}resource/rankm'></image>
     </view>
     <view class='box _center '>
       <view class='{{xiaoliang!=1?"to-red":""}} h5' bindtap='bindxiaoliang'>销量</view>
       <image wx:if='{{xiaoliang==1}}' class='rank' src='{{uploadpath}}resource/rank'></image>
       <image wx:if='{{xiaoliang==2}}' class='rank' src='{{uploadpath}}resource/rankmax'></image>
-      <image wx:if='{{xiaoliang==3}}' class='rank' src='{{uploadpath}}resource/rankmin'></image>
+      <image wx:if='{{xiaoliang==3}}' class='rank' src='{{uploadpath}}resource/rankm'></image>
     </view>
     <view class='box _center '>
       <view class='{{xinpin!=1?"to-red":""}} h5' bindtap='bindxinpin'>新品</view>
       <image wx:if='{{xinpin==1}}' class='rank' src='{{uploadpath}}resource/rank'></image>
       <image wx:if='{{xinpin==2}}' class='rank' src='{{uploadpath}}resource/rankmax'></image>
-      <image wx:if='{{xinpin==3}}' class='rank' src='{{uploadpath}}resource/rankmin'></image>
+      <image wx:if='{{xinpin==3}}' class='rank' src='{{uploadpath}}resource/rankm'></image>
     </view>
-    <image style='width:30rpx;height:30rpx' class='box margin-right-30' src='{{uploadpath}}resource/way1'></image>
+    <image style='width:30rpx;height:30rpx' class='box margin-right-30' bindtap='bindimg' src='{{uploadpath}}resource/way1'></image>
   </view>
 
 </view>
 
-<view class='flex-row flex-wrap' style='margin-bottom:30rpx'>
+<view wx:if='{{shop==1}}' class='flex-row flex-wrap' style='margin-bottom:30rpx'>
   <view class='hezi' wx:for="{{catlist}}" wx:key="k">
     <view bindtap="todetails" id="{{item.id}}">
       <image class='img' src='{{uploadpath}}product/{{item.cover}}'></image>
@@ -63,16 +63,49 @@
     </view>
     <view class='pad'>
       <view class='flex-row flex-center margin-top-10'>
-        <view class='h6' style='color:rgb(255,90,0)'>{{item.pricestr}}</view>
-        <view class='h6 margin-left-10'>377件已售</view>
+        <view class='h6' style='color:rgb(255,90,0)'>￥{{item.pricestr}}</view>
+        <view class='h6 margin-left-10 txt-gray'>377件已售</view>
         <view class='flex-1'></view>
         <image style='width:30rpx;height:30rpx' src='{{uploadpath}}resource/shop_min'></image>
       </view>
     </view>
   </view>
-
 </view>
 
+
+
+<view wx:if='{{shop==2}}' style='background:white'>
+  <view style='height:2rpx;background:#f0f0f0;'></view>
+
+  <view wx:for="{{catlist}}" wx:key="k">
+    <view class='hezi1'>
+      <view bindtap="todetails" id="{{item.id}}" class='flex-row '>
+        <image class='img1' src='{{uploadpath}}product/{{item.cover}}'></image>
+        <view style='margin-left:30rpx;margin-right:20rpx;'>
+          <view class='h6 over' style='width:420rpx;height:64rpx'>{{item.summary}}</view>
+          <view class='flex-row' style='margin-top:140rpx'>
+            <view class='h5' style='color:rgb(255,90,0)'>￥{{item.pricestr}}</view>
+            <view class='h6 margin-left-10 txt-gray' style='text-decoration:line-through;margin-top:4rpx'>{{item.oripricestr}}</view>
+            <view class='margin-left-15 txt-gray flex-row' style='margin-top:4rpx'>
+              <view class='h6'>已售：</view>
+              <view class='h6' style='color:rgb(255,90,0)'>337</view>
+            </view>
+            <view class='flex-1'></view>
+            <image style='width:40rpx;height:40rpx' src='{{uploadpath}}resource/shop_min'></image>
+          </view>
+        </view>
+      </view>
+      <view class='pad'>
+        <view class='flex-row flex-center margin-top-10'>
+
+        </view>
+      </view>
+    </view>
+    <view style='height:2rpx;background:#f0f0f0;'></view>
+
+  </view>
+
+</view>
 
 
 

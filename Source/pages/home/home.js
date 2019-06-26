@@ -20,6 +20,9 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
+    this.Base.setMyData({
+
+    });
   }
   onMyShow() {
     var that = this;
@@ -68,7 +71,7 @@ class Content extends AppBase {
       });
     })
     goodsapi.catlist({
-      // inhome: "Y"
+
     }, (catlist) => {
       that.Base.setMyData({
         catlist: catlist
@@ -81,9 +84,29 @@ class Content extends AppBase {
     });
   }
 
+  bindfenlei(e) {
+    var id = e.currentTarget.id;
+    console.log(id);
+    // return;
+    var goodsapi = new GoodsApi();
+    goodsapi.classifylist({
+      cat_id: id
+    }, (classifylist) => {
+      console.log(classifylist)
+      this.Base.setMyData({
+        classifylist: classifylist, cat_id: id
+      });
+    })
+
+    wx.reLaunch({
+      url: '/pages/goodscat/goodscat?type=' + id
+    })
+  }
+
 }
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
+body.bindfenlei = content.bindfenlei;
 Page(body)
