@@ -32,44 +32,19 @@ class Content extends AppBase {
         url: '/pages/order/order',
       })
     }
-    if (name == "daifk") {
-      wx.navigateTo({
-        url: '/pages/order/order',
-      })
-    }
-
-
-    if (name == "youhuiquan") {
-      wx.navigateTo({
-        url: '/pages/myorder/myorder',
-      })
-    }
-    if (name == "shoucang") {
+    if (name == "myshoucang") {
       wx.navigateTo({
         url: '/pages/collect/collect',
       })
     }
-    if (name == "address") {
+    if (name == "myaddress") {
       wx.navigateTo({
         url: '/pages/address/address',
       })
     }
-    if (name == "sc") {
-      wx.navigateTo({
-        url: '/pages/mycollect/mycollect',
-      })
-    }
-    if (name == "about") {
-      wx.navigateTo({
-        url: '/pages/aboutus/aboutus',
-      })
-    }
-    if (name == "jg") {
-      wx.navigateTo({
-        url: '/pages/addmechanism/addmechanism',
-      })
-    }
   }
+
+  
 }
 var content = new Content();
 var body = content.generateBodyJson();

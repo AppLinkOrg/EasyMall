@@ -22,6 +22,8 @@ class Content extends AppBase {
     this.Base.Page = this;
     super.onLoad(options);
     this.Base.setMyData({
+      status: false,
+      color:0
       // currenttab: 0
     });
   }
@@ -30,14 +32,17 @@ class Content extends AppBase {
     var idd = this.Base.options.id;
     var goodsapi = new GoodsApi();
     var instapi = new InstApi();
-    instapi.productlist({}, (productlist) => {
-      console.log(productlist)
+    goodsapi.photos({
+      goods_id: idd
+    }, (photos) => {
+      console.log(photos)
       this.Base.setMyData({
-        productlist: productlist
+        photos: photos
       });
     });
+
     goodsapi.info({
-      id: idd
+      id: idd,
     }, (info) => {
       console.log(info)
       this.Base.setMyData({
@@ -45,7 +50,23 @@ class Content extends AppBase {
       });
     });
 
+    goodsapi.goodscolorlist({
+      goods_id: idd
+    }, (goodscolorlist) => {
+      console.log(goodscolorlist)
+      this.Base.setMyData({
+        goodscolorlist: goodscolorlist
+      });
+    });
 
+    goodsapi.goodssizelist({
+      goods_id: idd
+    }, (goodssizelist) => {
+      console.log(goodssizelist)
+      this.Base.setMyData({
+        goodssizelist: goodssizelist
+      });
+    });
 
 
   }
@@ -62,6 +83,35 @@ class Content extends AppBase {
   //     currenttab: e.currentTarget.id
   //   });
   // }
+
+  addgwc(e) {
+    this.Base.setMyData({
+      status:true
+    })
+  }
+
+  buybuybuy(e) {
+    this.Base.setMyData({
+      status: true
+    })
+  }
+
+  close(e) {
+    this.Base.setMyData({
+      status: false
+    })
+  }
+
+  clickcolor(e) {
+    var id = e.currentTarget.id;
+    console.log(id);
+  }
+
+  clicksize(e){
+    var seq = e.currentTarget.id;
+    console.log(seq);
+  }
+
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -69,4 +119,9 @@ body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.changeCurrentTab = content.changeCurrentTab;
 body.changeTab = content.changeTab;
+body.addgwc = content.addgwc;
+body.close = content.close;
+body.buybuybuy = content.buybuybuy;
+body.clicksize = content.clicksize;
+body.clickcolor = content.clickcolor;
 Page(body)

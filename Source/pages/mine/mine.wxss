@@ -29,10 +29,12 @@ Page {
   display: table-cell;
   vertical-align: middle;
 }
-.left{
+
+.left {
   margin-left: 18rpx;
 }
-.hezi2{
+
+.hezi2 {
   border-radius: 10px;
   border: 1px solid #f0f0f0;
   background-color: white;

@@ -1,12 +1,11 @@
 <!--pages/goodsdetail/goodsdetail.wxml-->
-<import src="../../wxParse/wxParse.wxml" />
 
 <view>
   <view>
     <swiper indicator-dots="false" autoplay="{{true}}" interval="5000" duration="1000" style='height:660rpx;' indicator-color="rgba(0,0,0,0.3)" indicator-active-color='white'>
-      <block wx:for="{{topbanner}}" wx:key="k">
+      <block wx:for="{{photos}}" wx:key="k">
         <swiper-item>
-          <image class='photo' src="{{uploadpath}}indexbanner/{{item.img}}" />
+          <image class='photo' src="{{uploadpath}}goods/{{item.photo}}" />
         </swiper-item>
       </block>
     </swiper>
@@ -16,14 +15,14 @@
     <view class='flex-row'>
       <view class='h6 txt-gray' style='text-decoration:line-through;'>原价：</view>
       <view class='h6 txt-gray' style='text-decoration:line-through;'>{{info.oripricestr}}</view>
-      <view class='h6 txt-gray' style='margin-left:120rpx'>现价：{{info.oripricestr}}</view>
+      <view class='h6 txt-gray' style='margin-left:120rpx'>现价：{{info.pricestr}}</view>
     </view>
     <view class='flex-row flex-center'>
       <view class='h5 margin-top-10 txt-bold' style='width:80%'>{{info.name}}</view>
       <view class='flex-1'></view>
-      <view class='flex-row shoucang '>
-        <image class='icon-36' src='{{uploadpath}}resource/minsc'></image>
-        <view class='txt-gray h6'>收藏</view>
+      <view class='flex-row shoucang _center'>
+        <image class='icon-26' src='{{uploadpath}}resource/{{res.minsc}}'></image>
+        <view class='txt-gray h6' style='margin-left:6rpx'>收藏</view>
       </view>
     </view>
 
@@ -35,14 +34,14 @@
     <view class='h5 margin-left-20'>颜色分类</view>
     <view class='h5 margin-left-10'>尺码</view>
     <view class='flex-1'></view>
-    <image class='icon-10' src='{{uploadpath}}resource/jiantou'></image>
+    <image class='icon-10' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
   </view>
 
 
   <view class='_center margin-20'>
     <view class='flex-row flex-center'>
       <view style='background:#bfbfbf;width:100rpx;height:2rpx'></view>
-      <image class='icon-30 margin-left-10 margin-right-10' src='{{uploadpath}}resource/shop_pingjia'></image>
+      <image class='icon-30 margin-left-10 margin-right-10' src='{{uploadpath}}resource/{{res.shop_pingjia}}'></image>
       <view class='txt-gray h6 margin-right-10'>评价</view>
       <view style='background:#bfbfbf;width:100rpx;height:2rpx'></view>
     </view>
@@ -54,7 +53,7 @@
   <view class='_center margin-20'>
     <view class='flex-row flex-center'>
       <view style='background:#bfbfbf;width:100rpx;height:2rpx'></view>
-      <image class='icon-30 margin-left-10 margin-right-10' src='{{uploadpath}}resource/shop_xiangqing'></image>
+      <image class='icon-30 margin-left-10 margin-right-10' src='{{uploadpath}}resource/{{res.shop_xiangqing}}'></image>
       <view class='txt-gray h6 margin-right-10'>详情</view>
       <view style='background:#bfbfbf;width:100rpx;height:2rpx'></view>
     </view>
@@ -71,11 +70,11 @@
 
 
     <view class='flex-row flex-column margin-left-40 margin-top-10 '>
-      <image class='icon-36  ' src='{{uploadpath}}resource/maxsc'></image>
+      <image class='icon-36' src='{{uploadpath}}resource/{{res.minsc}}'></image>
       <view class='h5'>收藏</view>
     </view>
     <view class='flex-row flex-column margin-left-20 margin-top-10'>
-      <image class='icon-36' src='{{uploadpath}}resource/shop_gwc'></image>
+      <image class='icon-36' src='{{uploadpath}}resource/{{res.shop_gwc}}'></image>
       <view class='h5'>购物车</view>
     </view>
 
@@ -83,12 +82,63 @@
     <view class='flex-1'></view>
 
     <view class='_center flex-row'>
-      <view class='gwc txt-white _center'>加入购物车</view>
-      <view class='goumai txt-white _center'>立即购买</view>
+      <view class='gwc txt-white _center' bindtap='addgwc'>加入购物车</view>
+      <view class='goumai txt-white _center' bindtap='buybuybuy'>立即购买</view>
     </view>
+    <view class='black-block' wx:if='{{status==true}}' bindtap='close'></view>
+    <view class='cart-list' wx:if='{{status==true}}'>
+      <view class='margin-30'>
+        <view class='flex-row'>
+          <image class='icon-100' style='border-radius:10rpx' src='{{uploadpath}}product/{{info.cover}}'></image>
+          <view class='margin-left-20 margin-top-20'>
+            <view class='red h4'>￥58.00</view>
+            <view class='flex-row margin-top-40'>
+              <view class='txt-gray'>选择</view>
+              <view class='margin-left-20'>颜色</view>
+              <view class='margin-left-20'>尺码</view>
+            </view>
+          </view>
+          <view class='flex-1'></view>
+          <image class='icon' src='{{uploadpath}}resource/close' bindtap='close'></image>
+        </view>
 
+        <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view>
+
+        <view>
+          <view class='margin-top-20'>
+            <view>颜色</view>
+            <view class='flex-row flex-wrap'>
+              <view class='ysbiaoqian h5 margin-top-20 _center' wx:for='{{goodscolorlist}}' wx:key="k" id='{{item.id}}' 
+              bindtap='clickcolor'>{{item.name}}</view>
+            </view>
+          </view>
+
+          <view class='margin-top-20' style='height:2rpx;background:#f0f0f0 '></view>
+          <view class='margin-top-20'>
+            <view>尺码</view>
+            <view class='flex-row flex-wrap '>
+              <view class='cmbiaoqian h5 margin-top-20 _center ' wx:for='{{goodssizelist}}' wx:key="k" id='{{item.id}}' bindtap='clicksize '>{{item.size}}</view>
+            </view>
+          </view>
+        </view>
+        <view class='margin-top-20 ' style='height:2rpx;background:#f0f0f0 '></view>
+        <view class='margin-top-20 flex-row '>
+          <view>购买数量</view>
+          <view class='flex-1 '></view>
+          <view class='flex-row flex-center '>
+            <image class='icon-12 ' src='{{uploadpath}}resource/{{res.jian}} '></image>
+            <view class='jiajian '>1</view>
+            <image class='icon-12 ' src='{{uploadpath}}resource/{{res.jia}} '></image>
+          </view>
+        </view>
+        <view class='margin-top-20 ' style='height:2rpx;background:#f0f0f0 '></view>
+
+        <view class='txt-white _center queding margin-top-80 '>确定</view>
+
+      </view>
+
+    </view>
   </view>
-
 
 </view>
 
@@ -119,29 +169,27 @@
 
 
 
-
-
-<!-- <view class='flex-row tabs margin-top-10'>
-  <view class='flex-1 tab  flex-row ' bindtap='changeTab' id="0">
-    <view class='flex-1'></view>
-    <view class='tabtext {{currenttab==0?"active":""}}'>概述</view>
-    <view class='flex-1'></view>
+<!-- <view class='flex-row tabs margin-top-10 '>
+  <view class='flex-1 tab flex-row ' bindtap='changeTab ' id="0">
+    <view class='flex-1 '></view>
+    <view class='tabtext {{currenttab==0? "active": ""}} '>概述</view>
+    <view class='flex-1 '></view>
   </view>
-  <view class='flex-1 tab  flex-row ' bindtap='changeTab' id="1">
-    <view class='flex-1'></view>
-    <view class='tabtext {{currenttab==1?"active":""}}'>参数</view>
-    <view class='flex-1'></view>
+  <view class='flex-1 tab flex-row ' bindtap='changeTab ' id="1">
+    <view class='flex-1 '></view>
+    <view class='tabtext {{currenttab==1? "active": ""}} '>参数</view>
+    <view class='flex-1 '></view>
   </view>
 </view>
-<swiper indicator-dots="{{false}}" class='bottomtabs ' current='{{currenttab}}' bindchange="changeCurrentTab" class="maintab">
+<swiper indicator-dots="{{false}}" class='bottomtabs ' current='{{currenttab}} ' bindchange="changeCurrentTab" class="maintab">
   <swiper-item>
-    <scroll-view scroll-y style='height:100%'>
+    <scroll-view scroll-y style='height:100% '>
       <template is="wxParse" data="{{wxParseData:content.nodes}}" />
     </scroll-view>
 
   </swiper-item>
   <swiper-item>
-    <scroll-view scroll-y style='height:100%'>
+    <scroll-view scroll-y style='height:100% '>
       <template is="wxParse" data="{{wxParseData:detail.nodes}}" />
     </scroll-view>
 

@@ -103,7 +103,7 @@ class Content extends AppBase {
     if (jiage == 2) {
       var goodsapi = new GoodsApi();
       goodsapi.catlist({
-        orderby: "r_main.pricestr"
+        orderby: "r_main.pricestr desc"
       }, (catlist) => {
         console.log(catlist)
         this.Base.setMyData({
@@ -119,9 +119,9 @@ class Content extends AppBase {
     }
     if (jiage == 3) {
       var goodsapi = new GoodsApi();
-       
+
       goodsapi.catlist({
-        orderby: "r_main.pricestr desc"
+        orderby: "r_main.pricestr "
       }, (catlist) => {
         console.log(catlist)
         this.Base.setMyData({
@@ -280,7 +280,7 @@ class Content extends AppBase {
   todetails(e) {
     var id = e.currentTarget.id;
     wx.navigateTo({
-      url: '/pages/goodsdetail/goodsdetail?id='+id,
+      url: '/pages/goodsdetail/goodsdetail?id=' + id,
     })
   }
 

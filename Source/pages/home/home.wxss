@@ -1,24 +1,29 @@
 /* pages/home/home.wxss */
-.maintab_icon{
+
+.maintab_icon {
   width: 60rpx;
   height: 60rpx;
 }
-.headerback{
+
+.headerback {
   width: 750rpx;
   height: 350rpx;
 }
-.headerback image{
+
+.headerback image {
   width: 750rpx;
   height: 350rpx;
 }
-.headerlogo{
+
+.headerlogo {
   position: absolute;
   top: 0;
-width: 750rpx;
-height: 350rpx;
+  width: 750rpx;
+  height: 350rpx;
   background-color: rgba(0, 0, 0, 0.7);
 }
-.logoborder{
+
+.logoborder {
   border-radius: 50%;
   width: 140rpx;
   height: 140rpx;
@@ -26,52 +31,71 @@ height: 350rpx;
   margin-left: 305rpx;
   margin-top: 40rpx;
 }
-.headerlogo .logo{
+
+.headerlogo .logo {
   border-radius: 50%;
-  width:140rpx;
+  width: 140rpx;
   height: 140rpx;
 }
 
-.info-icon{
+.info-icon {
   border-radius: 50%;
   width: 30rpx;
   height: 30rpx;
 }
-.infoitem{
+
+.infoitem {
   margin-top: 14rpx;
   margin-bottom: 14rpx;
 }
-.infodesc{
+
+.infodesc {
   margin-left: 10rpx;
   align-items: center;
-  color:#666;
+  color: #666;
   font-size: 28rpx;
 }
-.contact-info{
+
+.contact-info {
   align-content: center;
   align-items: center;
 }
-.info-icon-big{
+
+.info-icon-big {
   width: 100rpx;
   height: 100rpx;
 }
-.indexbanner{
-  width:750rpx;
+
+.indexbanner {
+  width: 750rpx;
   height: 375rpx;
 }
-.cat-item{
+
+.cat-item {
   text-align: center;
   width: 150rpx;
   margin-bottom: 30rpx;
 }
-.recomm-item{
+
+.recomm-item {
   width: 375rpx;
 }
-.recomm-item image{
+
+.recomm-item image {
   width: 371rpx;
   height: 371rpx;
   margin-top: 8rpx;
 }
-.recomm-item2{
+
+.recomm-item2 {
   text-align: right;
+}
+
+.img {
+  width: 314rpx;
+  height: 190rpx;
+  border-radius: 30rpx;
+  margin-top:30rpx;
+  margin-left:30rpx;
+  margin-right: 30rpx;
 }

@@ -450,6 +450,7 @@ button[disabled][type=primary] {
   text-align: center;
   font-size: 24rpx;
   padding: 10rpx;
+  margin-top: 20rpx;
   margin-bottom: 20rpx;
   color: #999;
 }
@@ -1139,4 +1140,14 @@ button[disabled][type=primary] {
 
 .to-red {
   color: #ff5a00;
+}
+
+.over {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 }

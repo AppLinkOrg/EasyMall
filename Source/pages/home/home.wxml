@@ -2,7 +2,7 @@
 <view class='primary-block padding-20'>
   <view class='white-block flex-row flex-center' style='border-radius:40rpx;padding-top:10rpx;padding-bottom:10rpx'>
     <view class='line-height-0' style='margin-left:270rpx;margin-right:10rpx;'>
-      <image class='icon' src='{{uploadpath}}resource/search'></image>
+      <image class='icon' src='{{uploadpath}}resource/{{res.search}}'></image>
     </view>
     <view class='h5 txt-gray'>
       搜索商品
@@ -23,7 +23,7 @@
 
 <view class='white-block flex-row flex-wrap ' style='padding-top:40rpx;'>
   <view class='cat-item' wx:for="{{classifylist}}" wx:key="k">
-    <view  bindtap='bindfenlei' id='{{item.id}}'>
+    <view bindtap='bindfenlei' id='{{item.id}}'>
       <image class='icon-50' src='{{uploadpath}}productcat/{{item.logo}}'></image>
       <view class='h5' style='margin-top:6rpx;'>{{item.name}}</view>
     </view>
@@ -33,32 +33,16 @@
 
 
 <view class='margin-top-10 white-block'>
-  <view class='padding-20'>今日必买</view>
-  <view class='flex-row flex-wrap margin-40'>
-    <view style='padding-bottom:40rpx'>
-      <navigator url='/pages/goodsdetail/goodsdetail?id={{item.product_id}}' class='line-height-0'>
-        <image style='width:300rpx;height:216rpx;border-radius:30rpx' src='{{uploadpath}}indexbanner/{{mrtbanner.img}}'></image>
-      </navigator>
+  <view style='padding-top:20rpx;padding-left:20rpx;'>今日必买</view>
+  <view class='flex-row flex-center flex-wrap'>
+    <view wx:for='{{qiansi}}' bindtap="todetails" id="{{item.id}}">
+      <image class='img' src='{{uploadpath}}product/{{item.cover}}'></image>
+      <view class='h5 over' style='margin-left:30rpx;width:314rpx'>{{item.name}}</view>
     </view>
-
-    <view class='flex-1'></view>
-
-    <view style='padding-bottom:40rpx'>
-      <navigator url='/pages/goodsdetail/goodsdetail?id={{item.product_id}}' class='line-height-0'>
-        <image style='width:300rpx;height:216rpx;border-radius:30rpx' src='{{uploadpath}}indexbanner/{{mrtbanner.img}}'></image>
-      </navigator>
-    </view>
-
-
   </view>
 </view>
-
-
-
-
-
-
-<view wx:if="{{instinfo.level!=3}}" class='inbottomla txt-gray h6'>
+<view style='height:40rpx;background:white'></view>
+<view class='inbottomla txt-gray h6'>
   云易创提供技术支持
 </view>
 
