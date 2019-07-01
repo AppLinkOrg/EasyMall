@@ -1,8 +1,6 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/goodsdetail/goodsdetail",
-    "pages/goodscat/goodscat",
     "pages/auth/auth",
     "pages/success/success",
     "pages/signup/signup",
@@ -20,7 +18,9 @@
     "pages/address/address",
     "pages/order/order",
     "pages/addaddress/addaddress",
-    "pages/editoraddress/editoraddress"
+    "pages/editoraddress/editoraddress",
+    "pages/goodsdetail/goodsdetail",
+    "pages/goodscat/goodscat"
   ],
   "window": {
     "backgroundTextStyle": "light",

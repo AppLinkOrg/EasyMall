@@ -8,6 +8,10 @@ import {
 import {
   InstApi
 } from "../../apis/inst.api.js";
+import {
+  AddressApi
+} from "../../apis/address.api.js";
+
 var WxParse = require('../../wxParse/wxParse');
 
 class Content extends AppBase {
@@ -23,6 +27,13 @@ class Content extends AppBase {
   onMyShow() {
     var that = this;
     var instapi = new InstApi();
+    var addressapi = new AddressApi();
+    addressapi.addresslist({}, (addresslist) => {
+      console.log(addresslist);
+      that.Base.setMyData({
+        addresslist: addresslist
+      });
+    })
   }
 
   setPageTitle(instinfo) {

@@ -12,7 +12,7 @@
   top: 0;
   width: 100vw;
   height: 9%;
-  background-color: rgb(242, 242, 242);
+  background-color: white;
 }
 
 .hengxian {
@@ -21,9 +21,50 @@
 }
 
 .noselect {
-  color: black;
+  color: gray;
 }
 
 .select {
-  color: #F04848;
+  color: #f04848;
+}
+
+.div {
+  background-color: white;
+  border-radius: 10rpx;
+  margin: 20rpx;
+  padding: 20rpx;
+}
+
+.but1 {
+  color: gray;
+  padding-top: 10rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom: 10rpx;
+  min-width: 60rpx;
+  border-radius: 50rpx;
+  border: 1rpx solid #eee;
+}
+
+.but2 {
+  background: rgb(255, 143, 9);
+  color: white;
+  padding-top: 10rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom: 10rpx;
+  min-width: 60rpx;
+  border-radius: 50rpx;
+  border: 1rpx solid #eee;
+}
+
+.but3 {
+  color: rgb(255, 143, 9);
+  padding-top: 8rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom: 8rpx;
+  min-width: 60rpx;
+  border-radius: 50rpx;
+  border: 1rpx solid rgb(255, 143, 9);
 }

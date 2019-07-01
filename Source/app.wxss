@@ -893,6 +893,10 @@ button[disabled][type=primary] {
   margin: 10rpx;
 }
 
+.margin-15 {
+  margin: 15rpx;
+}
+
 .margin-20 {
   margin: 20rpx;
 }
@@ -907,6 +911,10 @@ button[disabled][type=primary] {
 
 .margin-top {
   margin-top: 40rpx;
+}
+
+.margin-top-50 {
+  margin-top: 50rpx;
 }
 
 .margin-top-60 {

@@ -7,6 +7,10 @@ import {
 import {
   InstApi
 } from "../../apis/inst.api.js";
+import {
+  OrderApi
+} from "../../apis/order.api.js";
+
 var WxParse = require('../../wxParse/wxParse');
 
 class Content extends AppBase {
@@ -17,18 +21,27 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=1;
     super.onLoad(options);
-    this.Base.setPageTitle("");
   }
-  onMyShow() {
-    var that = this;
-    var instapi = new InstApi();
-  }
-
   setPageTitle(instinfo) {
     wx.setNavigationBarTitle({
       title: '购物车',
     })
   }
+
+  onMyShow() {
+    var that = this;
+    var orderapi = new OrderApi();
+    orderapi.getgwclist({
+      status:'c'
+    }, (getgwclist) => {
+      console.log(getgwclist)
+      this.Base.setMyData({
+        getgwclist: getgwclist
+      });
+    });
+  }
+
+
 
   todetails(e) {
     var name = e.currentTarget.dataset.name;

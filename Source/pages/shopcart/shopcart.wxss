@@ -42,6 +42,14 @@
   background: #f0f0f0;
 }
 
+.jiesuan{
+  background-color:#ff5a00;
+  padding:10rpx;
+  color:white;
+  border-radius: 10rpx;
+
+}
+
 
 
 

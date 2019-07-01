@@ -48,7 +48,7 @@ class Content extends AppBase {
     var catlist = this.Base.getMyData().catlist;
     var goodsapi = new GoodsApi();
     var fenlei = this.Base.options.type;
-    console.log(fenlei + "的考卷返回")
+    // console.log(fenlei + "的考卷返回")
     if (fenlei == undefined) {
       // console.log("啦啦啦啦啦");
       console.log(fenlei);

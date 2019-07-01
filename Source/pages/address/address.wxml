@@ -1,36 +1,21 @@
 <!--pages/address/address.wxml-->
+
 <view>
-
-  <view class='margin-30'>
+  <view class='margin-30' wx:for="{{addresslist}}">
     <view class='flex-row flex-center'>
       <view class='flex-1'>
         <view class='flex-row flex-center '>
-          <view class='txt-bold'>长小江</view>
-          <view class='margin-left-20 txt-gray h5'>18774670476</view>
-          <view class='h5 default margin-left-20'>默认</view>
+          <view class='txt-bold'>{{item.name}}</view>
+          <view class='margin-left-20 txt-gray h5'>{{item.mobile}}</view>
+          <view wx:if='{{item.isdefault=="是"}}' class='h5 default margin-left-20'>默认</view>
         </view>
-        <view class='h5'>广东省深圳市罗湖区东门中路122路50楼1009室</view>
+        <view class='h5'>{{item.area}}{{item.address}}</view>
       </view>
-      <view class='margin-right-20 margin-left-20' style='width:3rpx;height:50rpx;background:gray;'></view>
-      <view class='txt-gray h5' bindtap='address' data-name='bianji'>编辑</view>
-    </view>
-  </view>
 
-  <view class='margin-30'>
-    <view class='flex-row flex-center'>
-      <view class='flex-1'>
-        <view class='flex-row flex-center '>
-          <view class='txt-bold'>长小江</view>
-          <view class='margin-left-20 txt-gray h5'>18774670476</view>
-          <view class='h5 default margin-left-20'>默认</view>
-        </view>
-        <view class='h5'>广东省深圳市罗湖区东门中路122路50楼1009</view>
-      </view>
       <view class='margin-right-20 margin-left-20' style='width:3rpx;height:50rpx;background:gray;'></view>
       <view class='txt-gray h5' bindtap='address' data-name='bianji'>编辑</view>
     </view>
   </view>
 </view>
 
- 
 <view class='_center tianjia txt-white' bindtap='address' data-name='add'>+ 添加收货地址</view>

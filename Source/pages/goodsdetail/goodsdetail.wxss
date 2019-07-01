@@ -72,6 +72,21 @@
   border-radius: 0 50rpx 50rpx 0;
 }
 
+.gwc1 {
+  height: 70rpx;
+  width: 300rpx;
+  background-color: rgb(255, 192, 2);
+  border-radius: 50rpx 0 0 50rpx;
+}
+
+.goumai1 {
+  height: 70rpx;
+  width: 300rpx;
+  margin-right: 20rpx;
+  background-color: rgb(255, 111, 1);
+  border-radius: 0 50rpx 50rpx 0;
+}
+
 
 .choose {
   width: 100%;
@@ -120,6 +135,18 @@
   min-width: 80rpx;
 }
 
+.ysbiaoqian1{
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  margin-right: 20rpx;
+  background: #ff5a00;
+  border-radius: 10rpx;
+  min-width: 80rpx;
+  color:white;
+}
+
 .cmbiaoqian{
   padding-top: 10rpx;
   padding-bottom: 10rpx;
@@ -128,6 +155,17 @@
   margin-right: 20rpx;
   background: #f0f0f0;
   border-radius: 10rpx;
+  min-width: 40rpx;
+}
+.cmbiaoqian1{
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  margin-right: 20rpx;
+  background: #ff5a00;
+  border-radius: 10rpx;
+  color:white;
   min-width: 40rpx;
 }
 
