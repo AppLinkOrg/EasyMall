@@ -83,6 +83,14 @@ class Content extends AppBase {
     }
   }
 
+  jian(e){
+   
+  }
+
+  jia(e){
+
+  }
+
 
 
 }
@@ -93,4 +101,6 @@ body.onMyShow = content.onMyShow;
 body.todetails = content.todetails;
 body.select = content.select;
 body.allselect = content.allselect;
+body.jian = content.jian;
+body.jia = content.jia;
 Page(body)

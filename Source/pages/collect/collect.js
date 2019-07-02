@@ -1,66 +1,67 @@
 // pages/collect/collect.js
-Page({
+import {
+  AppBase
+} from "../../appbase";
+import {
+  ApiConfig
+} from "../../apis/apiconfig";
+import {
+  InstApi
+} from "../../apis/inst.api.js";
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+class Content extends AppBase {
+  constructor() {
+    super();
+  }
+  onLoad(options) {
+    this.Base.Page = this;
+    //options.id=1;
+    super.onLoad(options);
+    this.Base.setMyData({
 
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+    })
+  }
+  onMyShow() {
+    var that = this;
+    var instapi = new InstApi();
 
   }
-})
+  setPageTitle(instinfo) {
+    wx.setNavigationBarTitle({
+      title: '我的收藏',
+    })
+  }
+
+  quxiao(e) {
+    var id = e.currentTarget.id;
+    wx.showModal({
+      title: '确认取消收藏吗？',
+      content: '',
+      success: function(res) {
+        if (res.confirm) {
+          var goodsapi = new GoodsApi();
+          goodsapi.quxiaofav({
+            idlist: id
+          }, (quxiaofav) => {
+            console.log(quxiaofav);
+          });
+          wx.showToast({
+            title: '取消成功',
+            icon: 'success',
+            duration: 1000
+          })
+        }
+      }
+    })
+
+  }
+
+
+}
+var content = new Content();
+var body = content.generateBodyJson();
+body.onLoad = content.onLoad;
+body.onMyShow = content.onMyShow;
+body.bindqh = content.bindqh;
+body.quxiao = content.quxiao;
+Page(body)

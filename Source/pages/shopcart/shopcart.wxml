@@ -7,7 +7,6 @@
   <view data-name='guan' bindtap='todetails' class='guan'>去逛逛吧</view>
 </view>
 
-
 <view wx:if='{{getgwclist.length>0}}'>
   <view class='hezi'>
     <view class='hezi1'>
@@ -28,9 +27,9 @@
               <view class='txt-red'>￥{{item.pricestr}}</view>
               <view class='flex-1'></view>
               <view class='flex-row flex-center'>
-                <image class='icon-12' src='{{uploadpath}}resource/{{res.jian}}'></image>
+                <image class='icon-12' src='{{uploadpath}}resource/{{res.jian}}' bindtap='jian'></image>
                 <view class='jiajian'>{{item.num}}</view>
-                <image class='icon-12' src='{{uploadpath}}resource/{{res.jia}}'></image>
+                <image class='icon-12' src='{{uploadpath}}resource/{{res.jia}}' bindtap='jia'></image>
               </view>
             </view>
           </view>

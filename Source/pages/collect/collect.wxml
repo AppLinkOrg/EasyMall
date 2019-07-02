@@ -1,2 +1,26 @@
 <!--pages/collect/collect.wxml-->
-<text>pages/collect/collect.wxml</text>
+
+<!-- 
+<view wx:if='{{wishilist.leng>0}}' style='margin-top:130rpx'></view>
+<view style='margin-top:300rpx;margin-left:40vw'>
+  <image class='icon-75' src='{{uploadpath}}resource/{{res.nullcollect}}'></image>
+</view>
+<view class='_center txt-gray'>暂无收藏</view> -->
+
+<view class='padding-30' style='background:white;border-radius:10rpx'>
+  <view wx:for='{{wishilist}}' wx:key="k">
+    <view class='hezi1'>
+      <view bindtap="todetails" id="{{item.id}}" class='flex-row '>
+        <image class='img1' src='{{uploadpath}}product/{{item.cover}}'></image>
+        <view style='margin-left:20rpx;margin-right:20rpx;'>
+          <view class='h6 over' style='width:420rpx;height:64rpx'>{{item.summary}}暂无收藏暂无收藏暂无收藏暂无收藏暂无收藏暂无收藏暂无收藏</view>
+          <view class='flex-row' style='margin-top:20rpx'>
+            <view class='h5' style='color:rgb(255,90,0)'>￥{{item.pricestr}}</view>
+            <view class='h6 margin-left-10 txt-gray' style='text-decoration:line-through;margin-top:4rpx'>{{item.oripricestr}}</view>
+          </view>
+          <view class='quxiao _center h5 margin-top-20 txt-gray' bindtap='quxiao' id='{{item.id}}'>取消收藏</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

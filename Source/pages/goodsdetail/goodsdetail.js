@@ -15,7 +15,7 @@ import {
   OrderApi
 } from "../../apis/order.api.js";
 
-var WxParse = require('../../wxParse/wxParse');
+
 
 class Content extends AppBase {
   constructor() {
@@ -27,8 +27,8 @@ class Content extends AppBase {
     super.onLoad(options);
     this.Base.setMyData({
       status: false,
-      select: false
-      // currenttab: 0
+      select: false,
+      isfav: "N"
     });
   }
   onMyShow() {
@@ -80,22 +80,7 @@ class Content extends AppBase {
         goodssizelist: goodssizelist
       });
     });
-
-
   }
-
-  // changeCurrentTab(e) {
-  //   console.log(e);
-  //   this.Base.setMyData({
-  //     currenttab: e.detail.current
-  //   });
-  // }
-  // changeTab(e) {
-  //   console.log(e);
-  //   this.Base.setMyData({
-  //     currenttab: e.currentTarget.id
-  //   });
-  // }
 
   addgwc(e) {
     var type = e.currentTarget.dataset.type;
@@ -201,7 +186,7 @@ class Content extends AppBase {
   }
 
   toshopcart(e) {
-    console.log(e + "lalalall");
+    // console.log(e + "lalalall");
     wx.reLaunch({
       url: '/pages/shopcart/shopcart',
     })
@@ -245,6 +230,31 @@ class Content extends AppBase {
     })
   }
 
+  fav(e) {
+    var isfav = this.Base.getMyData().isfav;
+    var goodsapi = new GoodsApi();
+    if (isfav == "N") {
+      goodsapi.collect({
+        member_id: this.Base.getMyData().member_id,
+        goods_id: this.Base.options.goods_id
+      }, (collect) => {
+      });
+      this.Base.setMyData({
+        isfav: "Y"
+      });
+    }
+    if (isfav == "Y") {
+      var id = this.Base.getMyData().id;
+      goodsapi.quxiaofav({
+        idlist: id
+      }, (quxiaofav) => {
+      });
+      this.Base.setMyData({
+        isfav: "N"
+      });
+    }
+  }
+
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -261,4 +271,5 @@ body.confirm = content.confirm;
 body.toshopcart = content.toshopcart;
 body.select = content.select;
 body.addgouwuche = content.addgouwuche;
+body.fav = content.fav;
 Page(body)

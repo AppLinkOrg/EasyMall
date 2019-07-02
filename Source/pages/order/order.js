@@ -7,7 +7,6 @@ import {
 import {
   InstApi
 } from "../../apis/inst.api.js";
-var WxParse = require('../../wxParse/wxParse');
 
 class Content extends AppBase {
   constructor() {

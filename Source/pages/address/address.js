@@ -12,7 +12,6 @@ import {
   AddressApi
 } from "../../apis/address.api.js";
 
-var WxParse = require('../../wxParse/wxParse');
 
 class Content extends AppBase {
   constructor() {
@@ -47,7 +46,7 @@ class Content extends AppBase {
 
   address(e) {
     var name = e.currentTarget.dataset.name;
-    var id = e.currentTarget.dataset.id;
+    var id = e.currentTarget.id;
     console.log(name);
     console.log(id);
     // return;

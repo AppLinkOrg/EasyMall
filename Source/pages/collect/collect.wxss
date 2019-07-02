@@ -1,1 +1,22 @@
 /* pages/collect/collect.wxss */
+
+.img1 {
+  min-width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+.hezi1 {
+  margin-left: 26rpx;
+  margin-top: 20rpx;
+  margin-right: 26rpx;
+  /* margin-bottom: 20rpx; */
+  border-radius: 10rpx;
+}
+
+.quxiao{
+  padding: 6rpx;
+  border-radius: 30rpx;
+  background: rgb(238, 238, 238);
+  width: 20vw;
+  
+}

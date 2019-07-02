@@ -20,8 +20,9 @@
     <view class='flex-row flex-center'>
       <view class='h5 margin-top-10 txt-bold' style='width:80%'>{{info.name}}</view>
       <view class='flex-1'></view>
-      <view class='flex-row shoucang _center'>
-        <image class='icon-26' src='{{uploadpath}}resource/{{res.minsc}}'></image>
+      <view class='flex-row shoucang _center' bindtap='fav'>
+        <image class='icon-26' src='{{uploadpath}}resource/{{res.minsc}}' wx:if='{{isfav=="N"}}'></image>
+        <image class='icon-26' src='{{uploadpath}}resource/{{res.minysc}}' wx:if='{{isfav=="Y"}}'></image>
         <view class='txt-gray h6' style='margin-left:6rpx'>收藏</view>
       </view>
     </view>
@@ -69,8 +70,9 @@
   <view class='dilan flex-row'>
 
 
-    <view class='flex-row flex-column margin-left-40 margin-top-10 '>
-      <image class='icon-36' src='{{uploadpath}}resource/{{res.minsc}}'></image>
+    <view class='flex-row flex-column margin-left-40 margin-top-10' bindtap='fav'>
+      <image class='icon-36' src='{{uploadpath}}resource/{{res.minsc}}' wx:if='{{isfav=="N"}}' bindtap='fav' id='Y'></image>
+      <image class='icon-36' src='{{uploadpath}}resource/{{res.minysc}}' wx:if='{{isfav=="Y"}}' bindtap='fav' id='N'></image>
       <view class='h5'>收藏</view>
     </view>
     <view class='flex-row flex-column margin-left-20 margin-top-10' bindtap='toshopcart'>
