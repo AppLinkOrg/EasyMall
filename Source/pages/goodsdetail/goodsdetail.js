@@ -232,23 +232,27 @@ class Content extends AppBase {
 
   fav(e) {
     var isfav = this.Base.getMyData().isfav;
-    var goodsapi = new GoodsApi();
+    var goodsapi = new GoodsApi();        
+    var member_id = this.Base.getMyData().memberinfo.id;
+    var goods_id = this.Base.options.id;
+    console.log(member_id);
+    console.log(goods_id);
+    // return;
     if (isfav == "N") {
       goodsapi.collect({
-        member_id: this.Base.getMyData().member_id,
-        goods_id: this.Base.options.goods_id
-      }, (collect) => {
-      });
+        member_id: member_id,
+        goods_id: goods_id
+      }, (collect) => {});
       this.Base.setMyData({
         isfav: "Y"
       });
     }
     if (isfav == "Y") {
-      var id = this.Base.getMyData().id;
+      var id = this.Base.options.id;
       goodsapi.quxiaofav({
-        idlist: id
-      }, (quxiaofav) => {
-      });
+        member_id: member_id,
+        goods_id: goods_id
+      }, (quxiaofav) => {});
       this.Base.setMyData({
         isfav: "N"
       });
