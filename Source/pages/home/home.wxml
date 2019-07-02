@@ -11,11 +11,9 @@
 </view>
 <view>
   <swiper indicator-dots="false" autoplay="{{true}}" interval="5000" duration="1000" style='height:370rpx;' indicator-color="rgba(0,0,0,0.3)" indicator-active-color='white'>
-    <block wx:for="{{topbanner}}" wx:key="k">
+    <block wx:for="{{indexbanner}}" wx:key="k">
       <swiper-item>
-        <navigator url='/pages/goodsdetail/goodsdetail?id={{item.product_id}}'>
-          <image class='indexbanner' src="{{uploadpath}}indexbanner/{{item.img}}" />
-        </navigator>
+        <image class='indexbanner' src="{{uploadpath}}indexbanner/{{item.img}}" />
       </swiper-item>
     </block>
   </swiper>

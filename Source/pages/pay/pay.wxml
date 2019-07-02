@@ -1,0 +1,63 @@
+<!--pages/pay/pay.wxml-->
+<view>
+  <view class='padding-30' style='background:white'>
+    <view class='flex-row'>
+      <view class='icon'></view>
+      <view class='h5-5 margin-left-10'>收货人：啦啦啦</view>
+      <view class='flex-1'></view>
+      <view class='h5-5 margin-right-20'>1545151122</view>
+    </view>
+    <view class='flex-row flex-center'>
+      <image class='icon' src='{{uploadpath}}resource/{{res.map}}'></image>
+      <view class='h5-5 txt-gray margin-left-10' style='width:600rpx'>收货地址：广东深圳市南山区新安街道安街道安街道安街道</view>
+      <view class='flex-1'></view>
+      <image class='icon-10' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
+    </view>
+  </view>
+
+  <view class='margin-30'>
+    <view class='flex-row'>
+      <image class='icon-75' style='border-radius:10rpx' src='{{uploadpath}}resource/{{res.a}}'></image>
+      <view class='flex-1 margin-left-20 '>
+        <view class='h5-5'>聚划算！韩国正品AHC旅行中样6件套洁面水乳眼霜bb霜保湿便携带</view>
+        <view class='flex-row margin-top-10'>
+          <view class='h6 txt-gray'>颜色</view>
+          <view class='margin-left-10 h6 txt-gray'>尺码</view>
+        </view>
+        <view class='flex-row margin-top-10'>
+          <view class='h5 to-red'>￥</view>
+          <view class='h5 to-red'>65.00</view>
+          <view class='flex-1'></view>
+          <view class='h5'>x1</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='' style='background:white'>
+    <view class='flex-row padding-20'>
+      <view class='h5'>配送运费</view>
+      <view class='flex-1'></view>
+      <view class='h5 txt-gray'>￥0.00</view>
+    </view>
+    <view style='height:2rpx;background:#f0f0f0'></view>
+    <view class='padding-20 flex-row'>
+      <view class='h5'>买家留言</view>
+      <textarea class='h6 margin-left-10 padding-5' style='height:120rpx;width:560rpx;' placeholder='可填写您与卖家达成一致的要求'></textarea>
+    </view>
+    <view style='height:2rpx;background:#f0f0f0'></view>
+    <view class='flex-row' style='padding-right:20rpx;padding-top:30rpx;padding-bottom:30rpx;'>
+      <view class='flex-1'></view>
+      <view class='txt-bold'>总计：</view>
+      <view class='to-red'>￥29.50</view>
+    </view>
+  </view>
+
+  <view class='flex-row flex-center margin-top-20 padding-30' style='background:white'>
+    <image class='icon' src='{{uploadpath}}resource/{{res.wx}}'></image>
+    <view class='margin-left-20'>微信支付</view>
+  </view>
+
+ <button class='h5 but'>提交订单</button>
+
+</view>

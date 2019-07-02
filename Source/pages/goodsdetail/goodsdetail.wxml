@@ -73,11 +73,14 @@
       <image class='icon-36' src='{{uploadpath}}resource/{{res.minsc}}'></image>
       <view class='h5'>收藏</view>
     </view>
-    <view class='flex-row flex-column margin-left-20 margin-top-10'>
-      <image class='icon-36' src='{{uploadpath}}resource/{{res.shop_gwc}}' bindtap='toshopcart'></image>
+    <view class='flex-row flex-column margin-left-20 margin-top-10' bindtap='toshopcart'>
+      <image class='icon-36' src='{{uploadpath}}resource/{{res.shop_gwc}}'> </image>
       <view class='h5'>购物车</view>
+      <view wx:if='{{getgwclist.length>0}}' class='xiaoxi text-center flex-row flex-column'>
+        <view class='txt-white h7 nm _center' style='background:red;'>{{getgwclist.length}}</view>
+        <!-- <image class='num' src='{{uploadpath}}resource/{{res.xiaoxitishi}}'></image> -->
+      </view>
     </view>
-
 
     <view class='flex-1'></view>
 

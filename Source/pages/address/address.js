@@ -27,8 +27,11 @@ class Content extends AppBase {
   onMyShow() {
     var that = this;
     var instapi = new InstApi();
+    var member_id = this.Base.getMyData().memberinfo.id;
     var addressapi = new AddressApi();
-    addressapi.addresslist({}, (addresslist) => {
+    addressapi.addresslist({
+      member_id: member_id
+    }, (addresslist) => {
       console.log(addresslist);
       that.Base.setMyData({
         addresslist: addresslist
@@ -43,20 +46,15 @@ class Content extends AppBase {
   }
 
   address(e) {
-    var type = e.currentTarget.dataset.name;
-    if (type == 'add') {
-      wx.navigateTo({
-        url: '/pages/addaddress/addaddress',
-      })
-    }
-    if (type == 'bianji') {
-      wx.navigateTo({
-        url: '/pages/editoraddress/editoraddress',
-      })
-    }
-
+    var name = e.currentTarget.dataset.name;
+    var id = e.currentTarget.dataset.id;
+    console.log(name);
+    console.log(id);
+    // return;
+    wx.navigateTo({
+      url: '/pages/addaddress/addaddress?name=' + name+"&&id="+id,
+    })
   }
-
 
 }
 var content = new Content();

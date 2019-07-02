@@ -254,17 +254,16 @@ export class AppBase {
                 ApiConfig.SetToken(data.openid);
                 console.log("goto update info");
                 that.onMyShow();
-
-                // that.Base.gotoOpenUserInfoSetting();
-                // if (this.Base.needauth == true) {
-                //   wx.redirectTo({
-                //     url: '/pages/auth/auth',
-                //   })
-                // } else {
-                //   that.onMyShow();
-                // }
+                that.Base.gotoOpenUserInfoSetting();
+                if (this.Base.needauth == true) {
+                  wx.redirectTo({
+                    url: '/pages/auth/auth',
+                  })
+                } else {
+                  that.onMyShow();
+                }
               });
-              //that.getAddress();
+              that.getAddress();
             }
           });
 
@@ -296,7 +295,6 @@ export class AppBase {
     var memberapi = new MemberApi();
     var that = this;
     memberapi.info({}, (info) => {
-
       this.Base.setMyData({
         memberinfo: info
       });

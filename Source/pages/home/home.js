@@ -28,30 +28,8 @@ class Content extends AppBase {
     var that = this;
     var instapi = new InstApi();
     instapi.indexbanner({}, (indexbanner) => {
-      var topbanner = [];
-      var bottombanner = [];
-      var mlbanner = null;
-      var mrtbanner = null;
-      var mrbbanner = null;
-      for (var i = 0; i < indexbanner.length; i++) {
-        if (indexbanner[i].position == "top") {
-          topbanner.push(indexbanner[i]);
-        } else if (indexbanner[i].position == "middleleft") {
-          mlbanner = indexbanner[i];
-        } else if (indexbanner[i].position == "middlerighttop") {
-          mrtbanner = indexbanner[i];
-        } else if (indexbanner[i].position == "middlerightbot") {
-          mrbbanner = indexbanner[i];
-        } else if (indexbanner[i].position == "bottom") {
-          bottombanner.push(indexbanner[i]);
-        }
-      }
-      that.Base.setMyData({
-        topbanner,
-        mlbanner,
-        mrtbanner,
-        mrbbanner,
-        bottombanner
+      this.Base.setMyData({
+        indexbanner,
       });
 
       instapi.productlist({}, (productlist) => {
@@ -59,8 +37,6 @@ class Content extends AppBase {
           productlist: productlist
         });
       });
-
-
     });
 
     var goodsapi = new GoodsApi();

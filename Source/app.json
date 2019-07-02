@@ -18,9 +18,9 @@
     "pages/address/address",
     "pages/order/order",
     "pages/addaddress/addaddress",
-    "pages/editoraddress/editoraddress",
     "pages/goodsdetail/goodsdetail",
-    "pages/goodscat/goodscat"
+    "pages/goodscat/goodscat",
+    "pages/pay/pay"
   ],
   "window": {
     "backgroundTextStyle": "light",

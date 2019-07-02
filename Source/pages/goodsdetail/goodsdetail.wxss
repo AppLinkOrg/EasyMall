@@ -87,17 +87,13 @@
   border-radius: 0 50rpx 50rpx 0;
 }
 
-
 .choose {
   width: 100%;
   height: 500rpx;
   background-color: skyblue;
 }
 
-
-
-
-.cart-list{
+.cart-list {
   width: 100%;
   min-height: 1350rpx;
   background: white;
@@ -106,10 +102,11 @@
   bottom: 0;
   transform: translateY(400rpx);
   -webkit-transform: translateY(400rpx);
-  transition: all .2s cubic-bezier(.25,.5,.5,.9);
-  -webkit-transition: all .2s cubic-bezier(.25,.5,.5,.9);
+  transition: all 0.2s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+  -webkit-transition: all 0.2s cubic-bezier(0.25, 0.5, 0.5, 0.9);
 }
-.an{
+
+.an {
   transform: translateY(0);
   -webkit-transform: translateY(0);
 }
@@ -124,7 +121,7 @@
   width: 100vw;
 }
 
-.ysbiaoqian{
+.ysbiaoqian {
   padding-top: 10rpx;
   padding-bottom: 10rpx;
   padding-left: 20rpx;
@@ -135,7 +132,7 @@
   min-width: 80rpx;
 }
 
-.ysbiaoqian1{
+.ysbiaoqian1 {
   padding-top: 10rpx;
   padding-bottom: 10rpx;
   padding-left: 20rpx;
@@ -144,10 +141,10 @@
   background: #ff5a00;
   border-radius: 10rpx;
   min-width: 80rpx;
-  color:white;
+  color: white;
 }
 
-.cmbiaoqian{
+.cmbiaoqian {
   padding-top: 10rpx;
   padding-bottom: 10rpx;
   padding-left: 20rpx;
@@ -157,7 +154,8 @@
   border-radius: 10rpx;
   min-width: 40rpx;
 }
-.cmbiaoqian1{
+
+.cmbiaoqian1 {
   padding-top: 10rpx;
   padding-bottom: 10rpx;
   padding-left: 20rpx;
@@ -165,11 +163,11 @@
   margin-right: 20rpx;
   background: #ff5a00;
   border-radius: 10rpx;
-  color:white;
+  color: white;
   min-width: 40rpx;
 }
 
-.jiajian{
+.jiajian {
   text-align: center;
   margin-left: 20rpx;
   margin-right: 20rpx;
@@ -177,10 +175,32 @@
   background: #f0f0f0;
 }
 
-.queding{
+.queding {
   position: relative;
   z-index: 3;
   background: #ff5a00;
   height: 80rpx;
   border-radius: 40rpx;
+}
+
+.num {
+  width: 50rpx;
+  height: 50rpx;
+  
+}
+.nm {
+  position: absolute;
+  z-index: 2;
+  border-radius: 50rpx;
+  top: 10rpx;
+  width: 30rpx;
+  height: 30rpx;
+  /* right: 101rpx; */
+}
+
+.xiaoxi {
+  /* position: fixed;
+  z-index: 100; */
+  margin-right: -40rpx;
+  margin-top: -80rpx;
 }

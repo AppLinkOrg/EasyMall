@@ -7,6 +7,55 @@
   <view data-name='guan' bindtap='todetails' class='guan'>去逛逛吧</view>
 </view>
 
+
+<view wx:if='{{getgwclist.length>0}}'>
+  <view class='hezi'>
+    <view class='hezi1'>
+      <view wx:for='{{getgwclist}}' wx:key="k">
+        <view class='flex-row'>
+          <view class='flex-row flex-center'>
+            <image wx:if='{{selected==false}}' class='icon-25' src='{{uploadpath}}resource/{{res.unselected}}' bindtap='select' id='{{item.id}}'></image>
+            <image wx:if='{{selected==true}}' class='icon-25' src='{{uploadpath}}resource/{{res.selected}}' bindtap='select' id='{{item.id}}'></image>
+            <image class='icon-100 margin-left-20' src='{{uploadpath}}product/{{item.goods_cover}}'></image>
+          </view>
+          <view class='flex-wrap margin-left-20'>
+            <view class='h5 over'>{{item.goods_name}}</view>
+            <view class='flex-row biaoqian' style='width:150rpx'>
+              <view class='h5'>{{item.goodscolor_name}}</view>
+              <view class='h5 margin-left-10'>{{item.goodssize_size}}</view>
+            </view>
+            <view class='flex-row'>
+              <view class='txt-red'>￥{{item.pricestr}}</view>
+              <view class='flex-1'></view>
+              <view class='flex-row flex-center'>
+                <image class='icon-12' src='{{uploadpath}}resource/{{res.jian}}'></image>
+                <view class='jiajian'>{{item.num}}</view>
+                <image class='icon-12' src='{{uploadpath}}resource/{{res.jia}}'></image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='margin-top margin-bottom-30' style='height:2rpx;background:#f0f0f0;'></view>
+      </view>
+
+      <view class='flex-row flex-center'>
+        <image wx:if='{{selected==false}}' class='icon-25' src='{{uploadpath}}resource/{{res.unselected}}' bindtap='allselect'></image>
+        <image wx:if='{{selected==true}}' class='icon-25' src='{{uploadpath}}resource/{{res.selected}}' bindtap='allselect'></image>
+        <view class='margin-left-10'>全选</view>
+        <view class='flex-1'></view>
+        <view class='margin-right-20'>
+          <view class='to-red h5'>合计：￥989.36</view>
+          <view class='h5' style='margin-top-10'>不含邮费</view>
+        </view>
+        <view class='jiesuan h5 _center' style='width:15vw'>结算</view>
+      </view>
+
+    </view>
+
+  </view>
+</view>
+
+
 <!-- <view>
   <view class='hezi'>
     <view class='hezi1'>
@@ -50,49 +99,3 @@
 
   </view>
 </view> -->
-
-
-<view wx:if='{{getgwclist.length>0}}'>
-  <view class='hezi'>
-    <view class='hezi1'>
-      <view wx:for='{{getgwclist}}' wx:key="k">
-        <view class='flex-row'>
-          <view class='flex-row flex-center'>
-            <image class='icon-15 radius-50 ' style='border:2rpx solid #bfbfbf'></image>
-            <image class='icon-100 margin-left-20' src='{{uploadpath}}resource/{{res.a}}'></image>
-          </view>
-          <view class='flex-wrap margin-left-20'>
-            <view class='h5 over'>{{item.goods_name}}</view>
-            <view class='flex-row biaoqian' style='width:150rpx'>
-              <view class='h5'>{{item.goodscolor_name}}</view>
-              <view class='h5 margin-left-10'>{{item.goodssize_size}}</view>
-            </view>
-            <view class='flex-row'>
-              <view class='txt-red'>￥{{item.pricestr}}</view>
-              <view class='flex-1'></view>
-              <view class='flex-row flex-center'>
-                <image class='icon-12' src='{{uploadpath}}resource/{{res.jian}}'></image>
-                <view class='jiajian'>{{item.num}}</view>
-                <image class='icon-12' src='{{uploadpath}}resource/{{res.jia}}'></image>
-              </view>
-            </view>
-          </view>
-        </view>
-        <view class='margin-top margin-bottom-30' style='height:2rpx;background:#f0f0f0;'></view>
-      </view>
-
-      <view class='flex-row flex-center'>
-        <image class='icon-15 radius-50 ' style='border:2rpx solid #bfbfbf'></image>
-        <view class='margin-left-10'>全选</view>
-        <view class='flex-1'></view>
-        <view class='margin-right-20'>
-          <view class='to-red h5'>合计：￥989.36</view>
-          <view class='h5' style='margin-top-10'>不含邮费</view>
-        </view> 
-        <view class='jiesuan h5 _center' style='width:15vw'>结算</view>
-      </view>
-
-    </view>
-
-  </view>
-</view>

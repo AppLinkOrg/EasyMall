@@ -4,8 +4,8 @@
   <image src='{{uploadpath}}resource/{{res.mine_bg}}' class='bg_img'></image>
   <view class='padding-40'></view>
   <view class=' flex-row flex-column ' style='width:100%'>
-    <image class='icon-60 radius-50 ' style='border:4rpx solid #CECFCE' src='{{uploadpath}}resource/{{res.a}}'></image>
-    <view class='txt-black  txt-bold margin-top-10'>{{memberinfo.nickName}}长小江</view>
+    <image class='icon-60 radius-50 ' style='border:4rpx solid #CECFCE' src='{{memberinfo.avatarUrl}}'></image>
+    <view class='txt-black  txt-bold margin-top-10'>{{memberinfo.nickName}}</view>
   </view>
 
   <view class='' style='height:20rpx'></view>

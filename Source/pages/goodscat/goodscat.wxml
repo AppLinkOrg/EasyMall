@@ -50,7 +50,8 @@
       <image wx:if='{{xinpin==2}}' class='rank' src='{{uploadpath}}resource/{{res.rankmax}}'></image>
       <image wx:if='{{xinpin==3}}' class='rank' src='{{uploadpath}}resource/{{res.rankmin}}'></image>
     </view>
-    <image style='width:30rpx;height:30rpx' class='box margin-right-30' bindtap='bindimg' src='{{uploadpath}}resource/way1'></image>
+    <image wx:if='{{shop==1}}' style='width:30rpx;height:30rpx' class='box margin-right-30' bindtap='bindimg' src='{{uploadpath}}resource/way1'></image>
+    <image wx:if='{{shop==2}}' style='width:30rpx;height:30rpx' class='box margin-right-30' bindtap='bindimg' src='{{uploadpath}}resource/way2'></image>
   </view>
 
 </view>

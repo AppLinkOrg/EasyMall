@@ -36,6 +36,15 @@ class Content extends AppBase {
     var idd = this.Base.options.id;
     var goodsapi = new GoodsApi();
     var instapi = new InstApi();
+    var orderapi = new OrderApi();
+    orderapi.getgwclist({
+      status: 'c'
+    }, (getgwclist) => {
+      console.log(getgwclist)
+      this.Base.setMyData({
+        getgwclist: getgwclist
+      });
+    });
     goodsapi.photos({
       goods_id: idd
     }, (photos) => {
@@ -134,9 +143,10 @@ class Content extends AppBase {
   confirm(e) {
     var that = this;
     var orderapi = new OrderApi();
+    var member_id = this.Base.getMyData().memberinfo.id;
     var shop = this.Base.getMyData().info;
     var data = {
-      member_id: 25,
+      member_id: member_id,
       goods_id: shop.id,
       pricestr: shop.pricestr,
       img: shop.cover,
@@ -165,24 +175,37 @@ class Content extends AppBase {
           duration: 1000
         })
         that.close();
+        orderapi.getgwclist({
+          status: 'c'
+        }, (getgwclist) => {
+          console.log(getgwclist)
+          this.Base.setMyData({
+            getgwclist: getgwclist
+          });
+        });
         this.Base.setMyData({
           color: 0,
           size: 0
         })
       })
     }
-    // if (type == "buybuybuy") {
-
-    // }
+    if (type == "buybuybuy") {
+      wx.navigateTo({
+        url: '/pages/pay/pay',
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    }
 
   }
 
   toshopcart(e) {
-    console.log(e+"lalalall");
+    console.log(e + "lalalall");
     wx.reLaunch({
       url: '/pages/shopcart/shopcart',
     })
-  
+
   }
 
   addgouwuche(e) {
@@ -198,6 +221,14 @@ class Content extends AppBase {
       size_id: this.Base.getMyData().size,
       num: 1,
       status: "C"
+    }
+    if (this.Base.getMyData().color == undefined) {
+      this.Base.info("请选择商品颜色");
+      return;
+    }
+    if (this.Base.getMyData().size == undefined) {
+      this.Base.info("请选择商品尺码");
+      return;
     }
     orderapi.gouwuche(data, (res) => {
       console.log(res);
@@ -228,6 +259,6 @@ body.clicksize = content.clicksize;
 body.clickcolor = content.clickcolor;
 body.confirm = content.confirm;
 body.toshopcart = content.toshopcart;
-body.select = content.select; 
+body.select = content.select;
 body.addgouwuche = content.addgouwuche;
 Page(body)

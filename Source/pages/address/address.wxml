@@ -13,7 +13,7 @@
       </view>
 
       <view class='margin-right-20 margin-left-20' style='width:3rpx;height:50rpx;background:gray;'></view>
-      <view class='txt-gray h5' bindtap='address' data-name='bianji'>编辑</view>
+      <view class='txt-gray h5' bindtap='address' data-name='bianji' data-id='{{item.id}}'>编辑</view>
     </view>
   </view>
 </view>

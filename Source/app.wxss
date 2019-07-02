@@ -148,8 +148,16 @@ view, navigator, input, text, textarea {
   font-size: 28rpx !important;
 }
 
+.h5-5 {
+  font-size: 26rpx !important;
+}
+
 .h6 {
   font-size: 24rpx !important;
+}
+
+.h7 {
+  font-size: 20rpx !important;
 }
 
 .text-underline {

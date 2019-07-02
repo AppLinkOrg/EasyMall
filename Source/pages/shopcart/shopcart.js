@@ -21,6 +21,9 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=1;
     super.onLoad(options);
+    this.Base.setMyData({
+      selected: false
+    })
   }
   setPageTitle(instinfo) {
     wx.setNavigationBarTitle({
@@ -32,7 +35,7 @@ class Content extends AppBase {
     var that = this;
     var orderapi = new OrderApi();
     orderapi.getgwclist({
-      status:'c'
+      status: 'c'
     }, (getgwclist) => {
       console.log(getgwclist)
       this.Base.setMyData({
@@ -41,8 +44,6 @@ class Content extends AppBase {
     });
   }
 
-
-
   todetails(e) {
     var name = e.currentTarget.dataset.name;
     if (name == "guan") {
@@ -50,7 +51,36 @@ class Content extends AppBase {
         url: '/pages/home/home',
       })
     }
+  }
 
+  select(e) {
+    var id = e.currentTarget.id;
+    console.log(id);
+    var selected = this.Base.getMyData().selected;
+    if (selected == false) {
+      this.Base.setMyData({
+        selected: true
+      })
+    }
+    if (selected == true) {
+      this.Base.setMyData({
+        selected: false
+      })
+    }
+  }
+
+  allselect(e) {
+    var selected = this.Base.getMyData().selected;
+    if (selected == false) {
+      this.Base.setMyData({
+        selected: true
+      })
+    }
+    if (selected == true) {
+      this.Base.setMyData({
+        selected: false
+      })
+    }
   }
 
 
@@ -61,4 +91,6 @@ var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.todetails = content.todetails;
+body.select = content.select;
+body.allselect = content.allselect;
 Page(body)
