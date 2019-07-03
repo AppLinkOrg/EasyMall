@@ -1,7 +1,7 @@
 <!--pages/address/address.wxml-->
 
 <view>
-  <view class='margin-30' wx:for="{{addresslist}}">
+  <view class='margin-30' wx:for="{{addresslist}}" wx:key="k">
     <view class='flex-row flex-center'>
       <view class='flex-1'>
         <view class='flex-row flex-center '>

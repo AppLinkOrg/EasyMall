@@ -13,12 +13,13 @@
       <view wx:for='{{getgwclist}}' wx:key="k">
         <view class='flex-row'>
           <view class='flex-row flex-center'>
-            <image wx:if='{{selected==false}}' class='icon-25' src='{{uploadpath}}resource/{{res.unselected}}' bindtap='select' id='{{item.id}}'></image>
-            <image wx:if='{{selected==true}}' class='icon-25' src='{{uploadpath}}resource/{{res.selected}}' bindtap='select' id='{{item.id}}'></image>
+            <image wx:if="{{item.selected}}" class='icon-25' src='{{uploadpath}}resource/{{res.selected}}' bindtap="selectList" data-index="{{index}}"></image>
+            
+            <image wx:else class='icon-25' src='{{uploadpath}}resource/{{res.unselected}}' bindtap="selectList" data-index="{{index}}"></image>
             <image class='icon-100 margin-left-20' src='{{uploadpath}}product/{{item.goods_cover}}'></image>
           </view>
           <view class='flex-wrap margin-left-20'>
-            <view class='h5 over'>{{item.goods_name}}</view>
+            <view class='h5 over'>{{item.goods_name}}{{item.selected}}</view>
             <view class='flex-row biaoqian' style='width:150rpx'>
               <view class='h5'>{{item.goodscolor_name}}</view>
               <view class='h5 margin-left-10'>{{item.goodssize_size}}</view>
@@ -27,9 +28,9 @@
               <view class='txt-red'>￥{{item.pricestr}}</view>
               <view class='flex-1'></view>
               <view class='flex-row flex-center'>
-                <image class='icon-12' src='{{uploadpath}}resource/{{res.jian}}' bindtap='jian'></image>
-                <view class='jiajian'>{{item.num}}</view>
-                <image class='icon-12' src='{{uploadpath}}resource/{{res.jia}}' bindtap='jia'></image>
+                <image class='icon-12' src='{{uploadpath}}resource/{{res.jian}}' bindtap="minusCount" data-index="{{index}}"></image>
+                <input class='jiajian' value="{{item.num}}" disabled="disabled"></input>
+                <image class='icon-12' src='{{uploadpath}}resource/{{res.jia}}' bindtap="addCount" data-index="{{index}}"></image>
               </view>
             </view>
           </view>
@@ -38,17 +39,16 @@
       </view>
 
       <view class='flex-row flex-center'>
-        <image wx:if='{{selected==false}}' class='icon-25' src='{{uploadpath}}resource/{{res.unselected}}' bindtap='allselect'></image>
-        <image wx:if='{{selected==true}}' class='icon-25' src='{{uploadpath}}resource/{{res.selected}}' bindtap='allselect'></image>
+        <image wx:if="{{selectAllStatus==true}}" class='icon-25' src='{{uploadpath}}resource/{{res.selected}}' bindtap='selectAll'></image>
+        <image wx:else class='icon-25' src='{{uploadpath}}resource/{{res.unselected}}' bindtap="selectAll"></image>
         <view class='margin-left-10'>全选</view>
         <view class='flex-1'></view>
         <view class='margin-right-20'>
-          <view class='to-red h5'>合计：￥989.36</view>
+          <view class='to-red h5'>合计：￥{{totalPrice}}</view>
           <view class='h5' style='margin-top-10'>不含邮费</view>
         </view>
-        <view class='jiesuan h5 _center' style='width:15vw'>结算</view>
+        <view class='jiesuan h5 _center' style='width:15vw' bindtap='jiesuan'>结算</view>
       </view>
-
     </view>
 
   </view>

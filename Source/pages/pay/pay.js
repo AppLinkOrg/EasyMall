@@ -7,7 +7,12 @@ import {
 import {
   InstApi
 } from "../../apis/inst.api.js";
-
+import {
+  OrderApi
+} from "../../apis/order.api.js";
+import {
+  AddressApi
+} from "../../apis/address.api.js";
 
 class Content extends AppBase {
   constructor() {
@@ -17,13 +22,10 @@ class Content extends AppBase {
     this.Base.Page = this;
     super.onLoad(options);
     this.Base.setMyData({
-      
+      jsonorder: options.jsonorder
     })
-  }
-  onMyShow() {
-    var that = this;
-    var instapi = new InstApi();
-
+    // var order = JSON.parse(jsonorder);
+    
   }
   setPageTitle(instinfo) {
     wx.setNavigationBarTitle({
@@ -31,34 +33,34 @@ class Content extends AppBase {
     })
   }
 
-  bindqh(e) {
-    var type = e.currentTarget.dataset.type;
-    if (type == "1") {
+  onMyShow() {
+    var that = this;
+    var instapi = new InstApi();
+    var orderapi = new OrderApi();
+    orderapi.getgwclist({
+      status: 'c'
+    }, (getgwclist) => {
+      console.log(getgwclist)
       this.Base.setMyData({
-        show: 1
-      })
-    }
-    if (type == "2") {
-      this.Base.setMyData({
-        show: 2
-      })
-    }
-    if (type == "3") {
-      this.Base.setMyData({
-        show: 3
-      })
-    }
-    if (type == "4") {
-      this.Base.setMyData({
-        show: 4
-      })
-    }
-    if (type == "5") {
-      this.Base.setMyData({
-        show: 5
-      })
-    }
+        getgwclist: getgwclist
+      });
+    });
+    var member_id = this.Base.getMyData().memberinfo.id;
+    var addressapi = new AddressApi();
+    var select = this.options.select;
+    addressapi.addresslist({
+      member_id: member_id,
+      select: true
+    }, (addresslist) => {
+      console.log(addresslist);
+      that.Base.setMyData({
+        addresslist: addresslist
+      });
+    })
+
   }
+
+
 
 }
 var content = new Content();

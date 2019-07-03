@@ -71,8 +71,8 @@
 
 
     <view class='flex-row flex-column margin-left-40 margin-top-10' bindtap='fav'>
-      <image class='icon-36' src='{{uploadpath}}resource/{{res.minsc}}' wx:if='{{isfav=="N"}}' bindtap='fav' ></image>
-      <image class='icon-36' src='{{uploadpath}}resource/{{res.minysc}}' wx:if='{{isfav=="Y"}}' bindtap='fav' ></image>
+      <image class='icon-36' src='{{uploadpath}}resource/{{res.minsc}}' wx:if='{{isfav=="N"}}' ></image>
+      <image class='icon-36' src='{{uploadpath}}resource/{{res.minysc}}' wx:if='{{isfav=="Y"}}' ></image>
       <view class='h5'>收藏</view>
     </view>
     <view class='flex-row flex-column margin-left-20 margin-top-10' bindtap='toshopcart'>

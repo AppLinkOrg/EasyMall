@@ -8,6 +8,9 @@ import {
 import {
   InstApi
 } from "../../apis/inst.api.js";
+import {
+  GoodsApi
+} from "../../apis/goods.api.js";
 
 class Content extends AppBase {
   constructor() {
@@ -24,7 +27,17 @@ class Content extends AppBase {
   onMyShow() {
     var that = this;
     var instapi = new InstApi();
-
+    var goodsapi = new GoodsApi();
+    var member_id = this.Base.getMyData().memberinfo.id;
+    // var goods_id = this.Base.options.id;
+    goodsapi.wishilist({
+      member_id: member_id
+    }, (wishilist) => {
+      console.log(wishilist);
+      that.Base.setMyData({
+        wishilist: wishilist
+      });
+    })
   }
   setPageTitle(instinfo) {
     wx.setNavigationBarTitle({
@@ -41,10 +54,9 @@ class Content extends AppBase {
         if (res.confirm) {
           var goodsapi = new GoodsApi();
           goodsapi.quxiaofav({
-            idlist: id
-          }, (quxiaofav) => {
-            console.log(quxiaofav);
-          });
+            member_id: member_id,
+            goods_id: goods_id
+          }, (quxiaofav) => {});
           wx.showToast({
             title: '取消成功',
             icon: 'success',

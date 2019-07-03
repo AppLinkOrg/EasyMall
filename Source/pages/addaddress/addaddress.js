@@ -13,7 +13,6 @@ import {
   AddressApi
 } from "../../apis/address.api.js";
 
-var WxParse = require('../../wxParse/wxParse');
 
 class Content extends AppBase {
   constructor() {

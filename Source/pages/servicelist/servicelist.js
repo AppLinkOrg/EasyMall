@@ -1,7 +1,13 @@
 // pages/content/content.js
-import { AppBase } from "../../appbase";
-import { ApiConfig } from "../../apis/apiconfig";
-import { InstApi } from "../../apis/inst.api.js";
+import {
+  AppBase
+} from "../../appbase";
+import {
+  ApiConfig
+} from "../../apis/apiconfig";
+import {
+  InstApi
+} from "../../apis/inst.api.js";
 
 class Content extends AppBase {
   constructor() {
@@ -16,11 +22,13 @@ class Content extends AppBase {
     var that = this;
     var instapi = new InstApi();
     instapi.servicelist({}, (servicelist) => {
-      that.Base.setMyData({ servicelist: servicelist });
+      that.Base.setMyData({
+        servicelist: servicelist
+      });
     });
   }
 
-  
+
 
 }
 var content = new Content();

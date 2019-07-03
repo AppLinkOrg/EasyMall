@@ -1,13 +1,12 @@
 <!--pages/collect/collect.wxml-->
 
-<!-- 
-<view wx:if='{{wishilist.leng>0}}' style='margin-top:130rpx'></view>
+<view wx:if='{{wishilist.leng==0}}' style='margin-top:130rpx'></view>
 <view style='margin-top:300rpx;margin-left:40vw'>
   <image class='icon-75' src='{{uploadpath}}resource/{{res.nullcollect}}'></image>
 </view>
-<view class='_center txt-gray'>暂无收藏</view> -->
+<view class='_center txt-gray'>暂无收藏</view>
 
-<view class='padding-30' style='background:white;border-radius:10rpx'>
+<view class='padding-30' style='background:white;border-radius:10rpx' wx:if='{{wishilist.leng>0}}'>
   <view wx:for='{{wishilist}}' wx:key="k">
     <view class='hezi1'>
       <view bindtap="todetails" id="{{item.id}}" class='flex-row '>

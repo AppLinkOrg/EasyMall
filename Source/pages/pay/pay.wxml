@@ -1,32 +1,32 @@
 <!--pages/pay/pay.wxml-->
-<view>
-  <view class='padding-30' style='background:white'>
+<view >
+  <view class='padding-30' style='background:white' wx:for='{{addresslist}}' wx:key="k">
     <view class='flex-row'>
       <view class='icon'></view>
-      <view class='h5-5 margin-left-10'>收货人：啦啦啦</view>
+      <view class='h5-5 margin-left-10'>收货人：{{item.name}}</view>
       <view class='flex-1'></view>
-      <view class='h5-5 margin-right-20'>1545151122</view>
+      <view class='h5-5 margin-right-20'>{{item.mobile}}</view>
     </view>
     <view class='flex-row flex-center'>
       <image class='icon' src='{{uploadpath}}resource/{{res.map}}'></image>
-      <view class='h5-5 txt-gray margin-left-10' style='width:600rpx'>收货地址：广东深圳市南山区新安街道安街道安街道安街道</view>
+      <view class='h5-5 txt-gray margin-left-10' style='width:600rpx'>收货地址：{{item.area}}{{item.address}}</view>
       <view class='flex-1'></view>
       <image class='icon-10' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
     </view>
   </view>
 
   <view class='margin-30'>
-    <view class='flex-row'>
-      <image class='icon-75' style='border-radius:10rpx' src='{{uploadpath}}resource/{{res.a}}'></image>
+    <view class='flex-row' wx:for='{{jsonorder}}' wx:key="k" style='margin-bottom:40rpx'>
+      <image class='icon-75' style='border-radius:10rpx' src='{{uploadpath}}product/{{item.img}}'></image>
       <view class='flex-1 margin-left-20 '>
-        <view class='h5-5'>聚划算！韩国正品AHC旅行中样6件套洁面水乳眼霜bb霜保湿便携带</view>
+        <view class='h5-5'>{{item.goods_name}}</view>
         <view class='flex-row margin-top-10'>
-          <view class='h6 txt-gray'>颜色</view>
-          <view class='margin-left-10 h6 txt-gray'>尺码</view>
+          <view class='h6 txt-gray'>{{item.color}}</view>
+          <view class='margin-left-10 h6 txt-gray'>{{item.size}}</view>
         </view>
         <view class='flex-row margin-top-10'>
           <view class='h5 to-red'>￥</view>
-          <view class='h5 to-red'>65.00</view>
+          <view class='h5 to-red'>{{item.pricestr}}</view>
           <view class='flex-1'></view>
           <view class='h5'>x1</view>
         </view>
@@ -49,7 +49,7 @@
     <view class='flex-row' style='padding-right:20rpx;padding-top:30rpx;padding-bottom:30rpx;'>
       <view class='flex-1'></view>
       <view class='txt-bold'>总计：</view>
-      <view class='to-red'>￥29.50</view>
+      <view class='to-red'>￥{{totalPrice}}</view>
     </view>
   </view>
 
