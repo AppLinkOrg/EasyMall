@@ -177,9 +177,7 @@ class Content extends AppBase {
     if (type == "buybuybuy") {
       wx.navigateTo({
         url: '/pages/pay/pay',
-        success: function(res) {},
-        fail: function(res) {},
-        complete: function(res) {},
+        
       })
     }
 

@@ -5,6 +5,7 @@
   background: rgb(255, 103, 0);
   width: 90vw;
   margin-top:80rpx;
+  margin-bottom: 40rpx;
   padding:6rpx;
   border-radius: 40rpx;
 }

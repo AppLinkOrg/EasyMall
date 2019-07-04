@@ -143,7 +143,6 @@ class Content extends AppBase {
       }
     }
     var jsonorder = JSON.stringify(order_id)
-
     console.log(jsonorder);
     // return;
     wx.navigateTo({

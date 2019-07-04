@@ -7,6 +7,9 @@ import {
 import {
   InstApi
 } from "../../apis/inst.api.js";
+import {
+  OrderApi
+} from "../../apis/order.api.js";
 
 class Content extends AppBase {
   constructor() {
@@ -14,9 +17,7 @@ class Content extends AppBase {
   }
   onLoad(options) {
     this.Base.Page = this;
-    //options.id=1;
     super.onLoad(options);
-    // this.Base.setPageTitle("");
     this.Base.setMyData({
       show: 1
     })
@@ -24,7 +25,15 @@ class Content extends AppBase {
   onMyShow() {
     var that = this;
     var instapi = new InstApi();
-
+    var orderapi = new OrderApi();
+    orderapi.orderlist({
+      status: 'C'
+    }, (orderlist) => {
+      console.log(orderlist)
+      this.Base.setMyData({
+        orderlist: orderlist
+      });
+    });
   }
   setPageTitle(instinfo) {
     wx.setNavigationBarTitle({
@@ -40,25 +49,67 @@ class Content extends AppBase {
       })
     }
     if (type == "2") {
+      var orderapi = new OrderApi();
+      orderapi.orderlist({
+        status: 'A'
+      }, (orderlist) => {
+        console.log(orderlist)
+        this.Base.setMyData({
+          orderlist: orderlist
+        });
+      });
       this.Base.setMyData({
         show: 2
       })
     }
     if (type == "3") {
+      var orderapi = new OrderApi();
+      orderapi.orderlist({
+        status: 'B'
+      }, (orderlist) => {
+        console.log(orderlist)
+        this.Base.setMyData({
+          orderlist: orderlist
+        });
+      });
       this.Base.setMyData({
         show: 3
       })
     }
     if (type == "4") {
+      var orderapi = new OrderApi();
+      orderapi.orderlist({
+        status: 'C'
+      }, (orderlist) => {
+        console.log(orderlist)
+        this.Base.setMyData({
+          orderlist: orderlist
+        });
+      });
       this.Base.setMyData({
         show: 4
       })
     }
     if (type == "5") {
+      var orderapi = new OrderApi();
+      orderapi.orderlist({
+        status: 'E'
+      }, (orderlist) => {
+        console.log(orderlist)
+        this.Base.setMyData({
+          orderlist: orderlist
+        });
+      });
       this.Base.setMyData({
         show: 5
       })
     }
+  }
+
+  todetail(e) {
+    wx.navigateTo({
+      url: '/pages/orderinfo/orderinfo',
+    })
   }
 
 }
@@ -67,4 +118,5 @@ var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.bindqh = content.bindqh;
+body.todetail = content.todetail;
 Page(body)

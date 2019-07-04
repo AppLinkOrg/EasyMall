@@ -20,7 +20,8 @@
     "pages/addaddress/addaddress",
     "pages/goodsdetail/goodsdetail",
     "pages/goodscat/goodscat",
-    "pages/pay/pay"
+    "pages/pay/pay",
+    "pages/orderinfo/orderinfo"
   ],
   "window": {
     "backgroundTextStyle": "light",

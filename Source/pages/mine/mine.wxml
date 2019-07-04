@@ -1,17 +1,13 @@
 <!--pages/mine/mine.wxml-->
 <view class=''>
-
   <image src='{{uploadpath}}resource/{{res.mine_bg}}' class='bg_img'></image>
   <view class='padding-40'></view>
   <view class=' flex-row flex-column ' style='width:100%'>
     <image class='icon-60 radius-50 ' style='border:4rpx solid #CECFCE' src='{{memberinfo.avatarUrl}}'></image>
     <view class='txt-black  txt-bold margin-top-10'>{{memberinfo.nickName}}</view>
   </view>
-
   <view class='' style='height:20rpx'></view>
-
 </view>
-
 <view class='' style='height:50rpx'></view>
 
 
@@ -20,7 +16,7 @@
     <view>全部订单</view>
     <view class='flex-1'></view>
     <view data-name='all' bindtap='todetails' class='h6 txt-gray'>查看全部订单</view>
-    <image class='icon-13 ' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
+    <image class='icon-13' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
   </view>
   <view class='margin-top-20' style='height:2rpx;wdith:100%;background:#f0f0f0'></view>
 

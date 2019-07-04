@@ -22,9 +22,8 @@ class Content extends AppBase {
     this.Base.Page = this;
     super.onLoad(options);
     this.Base.setMyData({
-      jsonorder: options.jsonorder
+       jsonorder: options.jsonorder
     })
-    // var order = JSON.parse(jsonorder);
     
   }
   setPageTitle(instinfo) {
