@@ -1,15 +1,16 @@
 <!--pages/home/home.wxml-->
-<view class='primary-block padding-20'>
-  <view class='white-block flex-row flex-center' style='border-radius:40rpx;padding-top:10rpx;padding-bottom:10rpx'>
+<view class='padding-20 top bg-white'>
+  <view class='bg-gray flex-row flex-center' style='border-radius:10rpx;padding-top:10rpx;padding-bottom:10rpx'>
     <view class='line-height-0' style='margin-left:270rpx;margin-right:10rpx;'>
-      <image class='icon' src='{{uploadpath}}resource/{{res.search}}'></image>
+      <image class='icon-15' src='{{uploadpath}}resource/{{res.search}}'></image>
     </view>
-    <view class='h5 txt-gray'>
+    <view class='h6'>
       搜索商品
     </view>
   </view>
 </view>
-<view>
+
+<view class='er'>
   <swiper indicator-dots="false" autoplay="{{true}}" interval="5000" duration="1000" style='height:370rpx;' indicator-color="rgba(0,0,0,0.3)" indicator-active-color='white'>
     <block wx:for="{{indexbanner}}" wx:key="k">
       <swiper-item>
@@ -22,24 +23,31 @@
 <view class='white-block flex-row flex-wrap ' style='padding-top:40rpx;'>
   <view class='cat-item' wx:for="{{classifylist}}" wx:key="k">
     <view bindtap='bindfenlei' id='{{item.id}}'>
-      <image class='icon-50' src='{{uploadpath}}productcat/{{item.logo}}'></image>
-      <view class='h5' style='margin-top:6rpx;'>{{item.name}}</view>
+      <image class='icon-30' src='{{uploadpath}}productcat/{{item.logo}}'></image>
+      <view class='h6' style='margin-top:6rpx;'>{{item.name}}</view>
     </view>
   </view>
 </view>
 
-
-
-<view class='margin-top-10 white-block'>
-  <view style='padding-top:20rpx;padding-left:20rpx;'>今日必买</view>
-  <view class='flex-row flex-center flex-wrap'>
+<view class='margin-top-50 white-block'>
+  <view style='padding-top:20rpx;padding-left:25rpx;' class='txt-bold h5'>今日必买</view>
+  <view class='flex-row flex-center flex-wrap de'>
     <view wx:for='{{qiansi}}' bindtap="todetails" id="{{item.id}}">
       <image class='img' src='{{uploadpath}}product/{{item.cover}}'></image>
-      <view class='h5 over' style='margin-left:30rpx;width:314rpx'>{{item.name}}</view>
+      <view class='h5 over' style='margin-left:30rpx;width:185rpx'>{{item.name}}</view>
+    </view>
+  </view>
+
+  <view style='padding-top:20rpx;padding-left:42%;' class='txt-bold h5'>猜你喜欢</view>
+  <view class='flex-row flex-center flex-wrap deone'>
+    <view wx:for='{{qiansi}}' bindtap="todetails" id="{{item.id}}">
+      <image class='imgone' src='{{uploadpath}}product/{{item.cover}}'></image>
+      <view class='h5 over' style='margin-left:30rpx;width:295rpx'>{{item.name}}</view>
     </view>
   </view>
 </view>
-<view style='height:40rpx;background:white'></view>
+<view style='height:20rpx;'></view>
+<!-- <view style='height:40rpx;background:white'></view> -->
 <view class='inbottomla txt-gray h6'>
   云易创提供技术支持
 </view>

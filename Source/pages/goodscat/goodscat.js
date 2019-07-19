@@ -43,6 +43,14 @@ class Content extends AppBase {
 
     console.log(this.Base.options.type + "删掉了反馈")
   }
+
+  setPageTitle(instinfo) {
+    wx.setNavigationBarTitle({
+      title: '分类',
+    })
+  }
+
+  
   onMyShow() {
     var that = this;
     var catlist = this.Base.getMyData().catlist;
@@ -77,6 +85,13 @@ class Content extends AppBase {
       });
     })
   }
+  
+  toclick(e) {
+      console.log(1231313);
+      this.Base.setMyData({ shunxu:10});
+
+  }
+
 
   bindjiage(e) {
     // var name = e.currentTarget.dataset.name;
@@ -312,4 +327,6 @@ body.catclick = content.catclick;
 body.bindmoren = content.bindmoren;
 body.bindimg = content.bindimg;
 body.todetails = content.todetails;
+
+body.toclick = content.toclick;
 Page(body)

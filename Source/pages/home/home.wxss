@@ -67,8 +67,10 @@
 }
 
 .indexbanner {
-  width: 750rpx;
-  height: 375rpx;
+  width: 710rpx;
+  height: 335rpx;
+  border-radius: 10rpx;
+  margin: 20rpx;
 }
 
 .cat-item {
@@ -92,10 +94,37 @@
 }
 
 .img {
-  width: 314rpx;
+  width: 175rpx;
   height: 190rpx;
-  border-radius: 30rpx;
+  border-radius: 10rpx 10rpx 10rpx 10rpx;
   margin-top:30rpx;
   margin-left:30rpx;
   margin-right: 30rpx;
 }
+
+.imgone{
+  width: 287rpx;
+  height: 300rpx;
+  border-radius: 10rpx 10rpx 10rpx 10rpx;
+  margin-top:30rpx;
+  margin-left:35rpx;
+  margin-right: 35rpx;
+}
+.er{
+  background: white;
+}
+.de{
+  border-radius: 20rpx;
+  box-shadow: rgb(226, 226, 226) 0px 0px 20px;
+  margin: 20rpx;
+  padding-bottom: 20rpx;
+}
+.deone{
+  border-radius: 20rpx;
+  box-shadow: rgb(226, 226, 226) 0px 0px 20px;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  padding-bottom: 20rpx;
+}
+

@@ -30,7 +30,7 @@ class Content extends AppBase {
   }
   setPageTitle(instinfo) {
     wx.setNavigationBarTitle({
-      title: '添加收货地址',
+      title: '编辑收货地址',
     })
   }
 
@@ -108,7 +108,7 @@ class Content extends AppBase {
       return;
     }
     if (data.city == undefined) {
-      this.Base.info("请选择所在地区");
+      this.Base.info("请选择所在区域");
       return;
     }
     if (data.address == undefined) {

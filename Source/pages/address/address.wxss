@@ -5,10 +5,14 @@
   color: rgb(231, 41, 41);
 }
 .tianjia{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  /* position: fixed;
+  bottom: 0; */
+  width: 87%;
   height: 8%;
-  border-radius: 5rpx;
-  background-color: #F04848;
+  border-radius: 15rpx;
+  margin-right: 50rpx;
+  margin-left: 50rpx;
+  border:1px solid rgb(218, 214, 214);
+  
+
 }

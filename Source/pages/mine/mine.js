@@ -19,6 +19,13 @@ class Content extends AppBase {
     super.onLoad(options);
     this.Base.setPageTitle("");
   }
+  
+  setPageTitle(instinfo) {
+    wx.setNavigationBarTitle({
+      title: '我的',
+    })
+  }
+
   onMyShow() {
     var that = this;
     var instapi = new InstApi();

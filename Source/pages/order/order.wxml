@@ -33,7 +33,7 @@
 
 
 
-<view style='margin-top:130rpx'></view>
+<view style='margin-top:170rpx'></view>
 <!-- <view style='margin-top:300rpx;margin-left:40vw'>
   <image class='icon-75' src='{{uploadpath}}resource/{{res.nullorder}}'></image>
 </view>
@@ -57,7 +57,7 @@
     <view class='h5 select'>待付款</view>
   </view>
 
-  <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view>
+  <!-- <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view> -->
   <view class='margin-20'>
     <view class='flex-row'>
       <image class='icon-75' style='border-radius:10rpx' src='{{uploadpath}}resource/{{res.a}}'></image>
@@ -96,7 +96,7 @@
     </view>
   </view>
 
-  <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view>
+  <!-- <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view> -->
   <view class='flex-row margin-top-20'>
     <view class='flex-1'></view>
     <view class='h6'>商品总价：</view>
@@ -104,7 +104,7 @@
     <view class='h6 margin-left-20'>实付款：</view>
     <view class='h6 select'>￥117.90</view>
   </view>
-  <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view>
+  <!-- <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view> -->
   <view class='margin-30 flex-row flex-center'>
     <view class='flex-1'></view>
     <view class='but1 h5 _center '>删除订单</view>
@@ -132,7 +132,7 @@
     <view class='h5 select'>待付款</view>
   </view>
 
-  <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view>
+  <!-- <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view> -->
   <view class='margin-20'>
     <view class='flex-row'>
       <image class='icon-75' style='border-radius:10rpx' src='{{uploadpath}}resource/{{res.a}}'></image>
@@ -171,7 +171,7 @@
     </view>
   </view>
 
-  <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view>
+  <!-- <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view> -->
   <view class='flex-row margin-top-20'>
     <view class='flex-1'></view>
     <view class='h6'>商品总价：</view>
@@ -179,7 +179,7 @@
     <view class='h6 margin-left-20'>实付款：</view>
     <view class='h6 select'>￥117.90</view>
   </view>
-  <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view>
+  <!-- <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view> -->
   <view class='margin-30 flex-row flex-center'>
     <view class='flex-1'></view>
     <view class='but1 h5 _center '>删除订单</view>
@@ -207,7 +207,7 @@
     <view class='h5 select'>待发货</view>
   </view>
 
-  <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view>
+  <!-- <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view> -->
   <view class='margin-20'>
     <view class='flex-row'>
       <image class='icon-75' style='border-radius:10rpx' src='{{uploadpath}}resource/{{res.a}}'></image>
@@ -246,7 +246,7 @@
     </view>
   </view>
 
-  <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view>
+  <!-- <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view> -->
   <view class='flex-row margin-top-20'>
     <view class='flex-1'></view>
     <view class='h6'>商品总价：</view>
@@ -254,7 +254,7 @@
     <!-- <view class='h6 margin-left-20'>实付款：</view>
     <view class='h6 select'>￥117.90</view> -->
   </view>
-  <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view>
+  <!-- <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view> -->
   <view class='margin-30 flex-row flex-center'>
     <view class='flex-1'></view>
     <view class='but3 h5 _center margin-left-10' bindtap='todetail'>详情</view>
@@ -281,7 +281,7 @@
       <view class='h5 select'>待收货</view>
     </view>
 
-    <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view>
+    <!-- <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view> -->
     <view class='margin-20'>
       <view class='flex-row'>
         <image class='icon-75' style='border-radius:10rpx' src='{{uploadpath}}resource/{{res.a}}'></image>
@@ -321,7 +321,7 @@
     </view>
   </view>
 
-  <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view>
+  <!-- <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view> -->
   <view class='flex-row margin-top-20'>
     <view class='flex-1'></view>
     <view class='h6'>商品总价：</view>
@@ -329,7 +329,7 @@
     <!-- <view class='h6 margin-left-20'>实付款：</view>
     <view class='h6 select'>￥117.90</view> -->
   </view>
-  <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view>
+  <!-- <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view> -->
   <view class='margin-30 flex-row flex-center'>
     <view class='flex-1'></view>
     <view class='but1 h5 _center '>确认收货</view>
@@ -376,7 +376,7 @@
       </view>
     </view>
 
-    <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view>
+    <!-- <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view> -->
     <view class='flex-row margin-top-20'>
       <view class='flex-1'></view>
       <view class='h6'>商品总价：</view>
@@ -384,7 +384,7 @@
       <!-- <view class='h6 margin-left-20'>实付款：</view>
       <view class='h6 select'>￥117.90</view> -->
     </view>
-    <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view>
+    <!-- <view class='margin-top-20' style='height:2rpx;background:#f0f0f0'></view> -->
     <view class='margin-30 flex-row flex-center'>
       <view class='flex-1'></view>
       <view class='but1 h5 _center'>评价</view>

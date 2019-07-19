@@ -1,16 +1,42 @@
 /* pages/goodscat/goodscat.wxss */
 
+.section {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+}
+
+.left {
+  width: 25vw;
+  background: #f6f6f6;
+  /* font-size: 28rpx; */
+}
+
+.right {
+  height: 100%;
+  background: #fff;
+  
+}
+
 .search {
   padding: 10rpx;
   margin: 20rpx;
   width: 90%;
   background-color: rgb(245, 245, 245);
-  border-radius: 50rpx;
+  border-radius: 10rpx;
 }
 
-.box {
+/* .box {
   width: 20%;
   padding: 20rpx;
+} */
+
+.big{
+  border-radius: 20rpx;
+  box-shadow: rgb(226, 226, 226) 0px 0px 20px;
+  margin: 20rpx;
 }
 
 .hezi {
@@ -27,13 +53,13 @@
   margin-right: 26rpx;
   /* margin-bottom: 20rpx; */
   border-radius: 10rpx;
-  
 }
 
 .img {
-  width: 338rpx;
-  height: 338rpx;
-  border-radius: 10rpx 10rpx 0rpx 0rpx;
+  width: 238rpx;
+  height: 260rpx;
+  border-radius: 10rpx 10rpx 10rpx 10rpx;
+  
 }
 
 .img1 {

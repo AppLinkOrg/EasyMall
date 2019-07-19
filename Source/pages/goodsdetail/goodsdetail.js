@@ -31,6 +31,13 @@ class Content extends AppBase {
       isfav: "N"
     });
   }
+
+  setPageTitle(instinfo) {
+    wx.setNavigationBarTitle({
+      title: '商品详情',
+    })
+  }
+
   onMyShow() {
     var that = this;
     var idd = this.Base.options.id;
@@ -205,6 +212,9 @@ class Content extends AppBase {
       num: 1,
       status: "C"
     }
+
+
+    
     if (this.Base.getMyData().color == undefined) {
       this.Base.info("请选择商品颜色");
       return;

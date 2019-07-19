@@ -59,32 +59,32 @@
 
 .gwc {
   height: 70rpx;
-  width: 250rpx;
-  background-color: rgb(255, 192, 2);
-  border-radius: 50rpx 0 0 50rpx;
+  width: 220rpx;
+  background-color: #ffa15b;
+  border-radius: 15rpx 0 0 15rpx;
 }
 
 .goumai {
   height: 70rpx;
-  width: 250rpx;
+  width: 220rpx;
   margin-right: 20rpx;
-  background-color: rgb(255, 111, 1);
-  border-radius: 0 50rpx 50rpx 0;
+  background-color: #fc7268;
+  border-radius: 0 15rpx 15rpx 0;
 }
 
 .gwc1 {
   height: 70rpx;
-  width: 300rpx;
-  background-color: rgb(255, 192, 2);
-  border-radius: 50rpx 0 0 50rpx;
+  width: 220rpx;
+  background-color: #ffa15b;
+  border-radius: 15rpx 0 0 15rpx;
 }
 
 .goumai1 {
   height: 70rpx;
-  width: 300rpx;
+  width: 220rpx;
   margin-right: 20rpx;
-  background-color: rgb(255, 111, 1);
-  border-radius: 0 50rpx 50rpx 0;
+  background-color: #fc7268;
+  border-radius: 0 15rpx 15rpx 0;
 }
 
 .choose {

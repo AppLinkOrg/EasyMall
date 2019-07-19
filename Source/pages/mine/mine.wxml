@@ -10,7 +10,6 @@
 </view>
 <view class='' style='height:50rpx'></view>
 
-
 <view class='hezi'>
   <view class=' flex-row _center '>
     <view>全部订单</view>
@@ -19,7 +18,6 @@
     <image class='icon-13' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
   </view>
   <view class='margin-top-20' style='height:2rpx;wdith:100%;background:#f0f0f0'></view>
-
 
   <view class='flex-row _center margin-top-20 margin-bottom-20' bindtap='todetails' data-name='myaddress'>
     <view>收货地址</view>
@@ -33,7 +31,8 @@
     <view class='flex-1'></view>
     <image class='icon-13 ' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
   </view>
-  <view class='margin-top-20 margin-bottom-20' style='height:2rpx;wdith:100%;background:#f0f0f0'></view>
+  </view>
+  <!-- <view class='margin-top-20 ' style='height:2rpx;wdith:100%;background:#f0f0f0'></view> -->
 
 
   <!-- <view class='flex-row '>
@@ -80,7 +79,7 @@
     <view style='height:160rpx'></view>
   </view> -->
 
-</view>
+<!-- </view> -->
 
 
 <!-- <view class='hezi2'>
@@ -100,4 +99,4 @@
   </view>
   <view class='flex-1'></view>
 
-</view> -->
+</view> 

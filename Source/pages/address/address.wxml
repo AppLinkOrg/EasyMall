@@ -7,15 +7,15 @@
         <view class='flex-row flex-center '>
           <view class='txt-bold'>{{item.name}}</view>
           <view class='margin-left-20 txt-gray h5'>{{item.mobile}}</view>
-          <view wx:if='{{item.isdefault=="是"}}' class='h5 default margin-left-20'>默认</view>
+          <!-- <view wx:if='{{item.isdefault=="是"}}' class='h5 default margin-left-20'>默认</view> -->
         </view>
         <view class='h5'>{{item.area}}{{item.address}}</view>
       </view>
 
-      <view class='margin-right-20 margin-left-20' style='width:3rpx;height:50rpx;background:gray;'></view>
-      <view class='txt-gray h5' bindtap='address' data-name='bianji' data-id='{{item.id}}'>编辑</view>
+      <!-- <view class='margin-right-20 margin-left-20' style='width:3rpx;height:50rpx;background:gray;'></view> -->
+      <view class='txt-red h5 ' bindtap='address' data-name='bianji' data-id='{{item.id}}'>编辑</view>
     </view>
   </view>
 </view>
 
-<view class='_center tianjia txt-white' bindtap='address' data-name='add'>+ 添加收货地址</view>
+<button class='_center tianjia h5'  bindtap='address' data-name='add'>+ 添加收货地址</button>

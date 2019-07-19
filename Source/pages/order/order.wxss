@@ -42,29 +42,29 @@
   padding-right: 20rpx;
   padding-bottom: 10rpx;
   min-width: 60rpx;
-  border-radius: 50rpx;
+  border-radius: 15rpx;
   border: 1rpx solid #eee;
 }
 
 .but2 {
-  background: rgb(255, 143, 9);
+  background: #ffa15b;
   color: white;
   padding-top: 10rpx;
   padding-left: 20rpx;
   padding-right: 20rpx;
   padding-bottom: 10rpx;
   min-width: 60rpx;
-  border-radius: 50rpx;
+  border-radius: 15rpx;
   border: 1rpx solid #eee;
 }
 
 .but3 {
-  color: rgb(255, 143, 9);
+  color:  #ffa15b;
   padding-top: 8rpx;
   padding-left: 20rpx;
   padding-right: 20rpx;
   padding-bottom: 8rpx;
   min-width: 60rpx;
-  border-radius: 50rpx;
-  border: 1rpx solid rgb(255, 143, 9);
+  border-radius: 15rpx;
+  border: 1rpx solid #ffa15b;
 }

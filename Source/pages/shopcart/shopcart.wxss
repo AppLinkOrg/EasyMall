@@ -6,20 +6,20 @@
   top: 40vw;
 }
 
-.guan {
+.guang {
   color: #f04848;
 }
 
 .hezi {
-  margin: 20rpx;
-  padding: 20rpx;
-  border-radius: 10px;
-  background: white;
+  margin: 5rpx;
+  padding: 5rpx;
+  /* border-radius: 10px;
+  background: white; */
 }
 
-.hezi1 {
+/* .hezi1 {
   margin: 10rpx;
-}
+} */
 
 .right {
   text-align: right;
@@ -41,21 +41,12 @@
   width: 50rpx;
   background: #f0f0f0;
 }
-
 .jiesuan{
-  background-color:#ff5a00;
+  background-color:#fc7268;
   padding:10rpx;
   color:white;
   border-radius: 10rpx;
-
 }
-
-
-
-
-
-
-
 
 /* 购物车 */
 
@@ -143,3 +134,14 @@ button {
  height: 120rpx;
  line-height: 120rpx;
 }
+
+.zze{
+  border-radius: 30rpx;
+  box-shadow: rgb(226, 226, 226) 0px 0px 20px;
+  margin-top: 15rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  padding: 25rpx;
+}
+
+

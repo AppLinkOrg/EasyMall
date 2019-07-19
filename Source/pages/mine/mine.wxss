@@ -17,8 +17,7 @@ Page {
 
 .hezi {
   border-radius: 10px;
-  border: 1px solid #f0f0f0;
-  background-color: white;
+  box-shadow: rgb(226, 226, 226) 0px 0px 20px;
   padding: 15px;
   margin: 10px;
 }
