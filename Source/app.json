@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/goods/goods",
     "pages/home/home",
     "pages/auth/auth",
     "pages/success/success",
@@ -18,6 +19,7 @@
     "pages/address/address",
     "pages/order/order",
     "pages/addaddress/addaddress",
+    
     "pages/goodsdetail/goodsdetail",
     "pages/goodscat/goodscat",
     "pages/pay/pay",

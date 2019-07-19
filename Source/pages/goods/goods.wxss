@@ -1,0 +1,94 @@
+/* pages/goodscat/goodscat.wxss */
+
+.section {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+}
+
+.left {
+  width: 25vw;
+  background: #f6f6f6;
+  /* font-size: 28rpx; */
+}
+
+.right {
+  height: 100%;
+  background: #fff;
+  
+}
+
+.search {
+  padding: 10rpx;
+  margin: 20rpx;
+  width: 90%;
+  background-color: rgb(245, 245, 245);
+  border-radius: 10rpx;
+}
+
+/* .box {
+  width: 20%;
+  padding: 20rpx;
+} */
+
+.big{
+  border-radius: 20rpx;
+  box-shadow: rgb(226, 226, 226) 0px 0px 20px;
+  margin: 20rpx;
+}
+
+.hezi {
+  margin-left: 26rpx;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+  background-color: white;
+  width: 45%;
+}
+
+.hezi1 {
+  margin-left: 26rpx;
+  margin-top: 20rpx;
+  margin-right: 26rpx;
+  /* margin-bottom: 20rpx; */
+  border-radius: 10rpx;
+}
+
+.img {
+  width: 158rpx;
+  height: 150rpx;
+  border-radius: 10rpx 10rpx 10rpx 10rpx;
+  
+}
+
+.img1 {
+  min-width: 240rpx;
+  height: 240rpx;
+  border-radius: 10rpx;
+}
+
+.pad {
+  padding-left: 20rpx;
+  padding-bottom: 10rpx;
+  padding-right: 20rpx;
+}
+
+.over {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.rank {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.tored {
+  background: #ff5a00;
+}

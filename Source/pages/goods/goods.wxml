@@ -1,0 +1,58 @@
+<view class='section'>
+  <view class='flex-row flex-center white-block' style='height:100rpx'>
+    <view class='flex-1'></view>
+    <view class='flex-row search _center'>
+      <image class='icon-15' style='margin-right:10rpx;' src='{{uploadpath}}resource/{{res.search}}'></image>
+      <view class=' h6'>请输入商品关键字</view>
+    </view>
+
+  </view>
+
+  <view class='flex-row'>
+    <view class='left text-center'>
+      <scroll-view scroll-y style='height:100vh'>
+        <view class='flex-center flex-wrap flex-row'>
+          <view class='flex-row flex-column'>
+            <view class='padding-20 {{shunxu==0?"to-red":""}}' style='font-size: 25rpx' data-name="all" bindtap='catclick'>全部商品</view>
+            <view class='{{shunxu==0?"tored":""}}'></view>
+          </view>
+          <view class='flex-row flex-column' style='min-width:150rpx' bindtap='toclick' wx:for='{{classifylist}}' wx:key="k">
+
+            <view class='padding-20 {{shunxu==item.id||cat==item.id?"to-red":""}}' id="{{item.id}}" data-idx="{{idx}}" bindtap='catclick' style='font-size: 25rpx'>{{item.name}}</view>
+
+            <view class='{{shunxu==item.id?"tored":""}}' style='width:80rpx;height:4rpx;'></view>
+          </view>
+        </view>
+        <view style='height:100rpx;'></view>
+      </scroll-view>
+
+    </view>
+
+    <view class='right'>
+      <scroll-view scroll-y style='height:100vh;'>
+        <view class='flex-row flex-center'>
+        </view>
+        <view wx:if='{{shop==1}}' class='flex-row flex-wrap big' style='margin-bottom:30rpx '>
+          <view class='hezi' wx:for="{{catlist}}" wx:key="k">
+            <view bindtap="todetails" id="{{item.id}}">
+              <image class='img' src='{{uploadpath}}product/{{item.cover}}'></image>
+              <view class='h6 over' style='min-height:64rpx;padding-top:10rpx;padding-right: 20rpx;padding-left: 20rpx;'>{{item.summary}}</view>
+            </view>
+           
+          </view>
+        </view>
+        <view wx:if='{{shop==2}}' style='background:white'>
+          <view style='height:2rpx;background:#f0f0f0;'></view>
+
+          <view wx:for="{{catlist}}" wx:key="k">
+           
+            
+
+          </view>
+
+        </view>
+        <view style='height:100rpx;'></view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
