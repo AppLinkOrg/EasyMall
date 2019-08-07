@@ -16,8 +16,8 @@
   </view>
 
   <view class='margin-30'>
-    <view class='flex-row' wx:for='{{jsonorder}}' wx:key="k" style='margin-bottom:40rpx'>
-      <image class='icon-75' style='border-radius:10rpx' src='{{uploadpath}}product/{{item.img}}'></image>
+    <view class='flex-row' wx:for='{{getgwclist}}' wx:key="k" style='margin-bottom:40rpx'>
+      <image class='icon-75' style='border-radius:10rpx' src='{{uploadpath}}product/{{item.goods_cover}}'></image>
       <view class='flex-1 margin-left-20 '>
         <view class='h5-5'>{{item.goods_name}}</view>
         <view class='flex-row margin-top-10'>
@@ -28,7 +28,7 @@
           <view class='h5 to-red'>￥</view>
           <view class='h5 to-red'>{{item.pricestr}}</view>
           <view class='flex-1'></view>
-          <view class='h5'>x1</view>
+          <view class='h5'>x{{item.num}}</view>
         </view>
       </view>
     </view>
@@ -43,7 +43,7 @@
     <view style='height:2rpx;background:#f0f0f0'></view>
     <view class='padding-20 flex-row'>
       <view class='h5'>买家留言</view>
-      <textarea class='h6 margin-left-10 padding-5' style='height:120rpx;width:560rpx;' placeholder='可填写您与卖家达成一致的要求'></textarea>
+      <textarea bindinput="liuyan" class='h6 margin-left-10 padding-5' style='height:120rpx;width:560rpx;' placeholder='可填写您与卖家达成一致的要求'></textarea>
     </view>
     <view style='height:2rpx;background:#f0f0f0'></view>
     <view class='flex-row' style='padding-right:20rpx;padding-top:30rpx;padding-bottom:30rpx;'>
@@ -58,6 +58,6 @@
     <view class='margin-left-20'>微信支付</view>
   </view>
 
- <button class='h5 but'>提交订单</button>
+ <button bindtap="payorder" class='h5 but'>提交订单</button>
 
 </view>

@@ -29,7 +29,7 @@ class Content extends AppBase {
     var member_id = this.Base.getMyData().memberinfo.id;
     var addressapi = new AddressApi();
     addressapi.addresslist({
-      member_id: member_id
+     
     }, (addresslist) => {
       console.log(addresslist);
       that.Base.setMyData({

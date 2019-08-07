@@ -130,9 +130,9 @@
           <view>购买数量</view>
           <view class='flex-1 '></view>
           <view class='flex-row flex-center '>
-            <image class='icon-12 ' src='{{uploadpath}}resource/{{res.jian}} '></image>
-            <view class='jiajian '>1</view>
-            <image class='icon-12 ' src='{{uploadpath}}resource/{{res.jia}} '></image>
+            <image bindtap="jian" class='icon-12 ' src='{{uploadpath}}resource/{{res.jian}} '></image>
+            <view class='jiajian '>{{num}}</view>
+            <image bindtap="jia" class='icon-12 ' src='{{uploadpath}}resource/{{res.jia}} '></image>
           </view>
         </view>
         <view class='margin-top-20' style='height:2rpx;background:#f0f0f0 '></view>
@@ -183,9 +183,9 @@
           <view>购买数量</view>
           <view class='flex-1 '></view>
           <view class='flex-row flex-center '>
-            <image class='icon-12 ' src='{{uploadpath}}resource/{{res.jian}} '></image>
-            <view class='jiajian '>1</view>
-            <image class='icon-12 ' src='{{uploadpath}}resource/{{res.jia}} '></image>
+            <image bindtap="jian" class='icon-12 ' src='{{uploadpath}}resource/{{res.jian}} '></image>
+            <view class='jiajian '>{{num}}</view>
+            <image bindtap="jia"  class='icon-12 ' src='{{uploadpath}}resource/{{res.jia}} '></image>
           </view>
         </view>
         <view class='margin-top-20' style='height:2rpx;background:#f0f0f0 '></view>

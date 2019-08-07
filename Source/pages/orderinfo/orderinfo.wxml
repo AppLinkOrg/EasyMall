@@ -4,9 +4,9 @@
   <view class='tou'>
     <view class='padding-20 flex-row'>
       <view>
-        <view class='txt-white'>等待买家付款</view>
-        <view class='h6 txt-white margin-top-10'>订单编号：201907041121331004</view>
-        <view class='h6 txt-white margin-top-10'>创建时间：2019-07-04 11:21:32</view>
+        <view wx:if="{{orderinfo.status=='A'}}" class='txt-white'>等待买家付款</view>
+        <view class='h6 txt-white margin-top-10'>订单编号：{{orderinfo.ordernum}}</view>
+        <view class='h6 txt-white margin-top-10'>创建时间：{{orderinfo.submit_time}}</view>
       </view>
       <view class='flex-1'></view>
       <image class='icon-70' src='{{uploadpath}}resource/{{res.hezi}}'></image>
@@ -16,56 +16,38 @@
   <view class='padding-30' style='background:white'>
     <view class='flex-row'>
       <view class='icon'></view>
-      <view class='h5-5 margin-left-10'>收货人：{{item.name}}啦啦啦</view>
+      <view class='h5-5 margin-left-10'>收货人：{{addres.name}}啦啦啦</view>
       <view class='flex-1'></view>
-      <view class='h5-5 margin-right-20'>{{item.mobile}}</view>
+      <view class='h5-5 margin-right-20'>{{addres.mobile}}</view>
     </view>
     <view class='flex-row flex-center'>
       <image class='icon' src='{{uploadpath}}resource/{{res.map}}'></image>
-      <view class='h5-5 txt-gray margin-left-10' style='width:600rpx'>收货地址：{{item.area}}{{item.address}}湖南省永州市东安县啦啦啦啦啦啦二位无问问</view>
+      <view class='h5-5 txt-gray margin-left-10' style='width:600rpx'>收货地址：{{addres.area}}{{addres.address}}</view>
       <view class='flex-1'></view>
       <image class='icon-10' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
     </view>
   </view>
 
   <!-- <view style='background:white;height:20rpx'></view> -->
-  <view class='margin-20'>
+  <view wx:for="{{orderinfo.order}}" wx:key='k' class='margin-20'>
     <view class='flex-row'>
-      <image class='icon-75' style='border-radius:10rpx' src='{{uploadpath}}resource/{{res.a}}'></image>
+      <image class='icon-75' style='border-radius:10rpx' src='{{uploadpath}}product/{{item.goodsimg}}'></image>
       <view class='flex-1 margin-left-20 '>
-        <view class='h6'>聚划算！韩国正品AHC旅行中样6件套洁面水乳眼霜bb霜保湿便携带</view>
+        <view class='h6'>{{item.goddsname}}</view>
         <view class='flex-row margin-top-10'>
-          <view class='h6 txt-gray'>{{item.color}}颜色</view>
-          <view class='margin-left-10 h6 txt-gray'>{{item.size}}尺码</view>
+          <view class='h6 txt-gray'>{{item.colorname}}颜色</view>
+          <view class='margin-left-10 h6 txt-gray'>{{item.sizename}}尺码</view>
         </view>
         <view class='flex-row margin-top-20'>
           <view class='h5 to-red'>￥</view>
-          <view class='h5 to-red'>65.00</view>
+          <view class='h5 to-red'>{{item.pricestr}}</view>
           <view class='flex-1'></view>
-          <view class='h5'>x1</view>
+          <view class='h5'>x{{item.num}}</view>
         </view>
       </view>
     </view>
   </view>
 
-  <view class='margin-20'>
-    <view class='flex-row'>
-      <image class='icon-75' style='border-radius:10rpx' src='{{uploadpath}}resource/{{res.a}}'></image>
-      <view class='flex-1 margin-left-20 '>
-        <view class='h6'>聚划算！韩国正品AHC旅行中样6件套洁面水乳眼霜bb霜保湿便携带</view>
-        <view class='flex-row margin-top-10'>
-          <view class='h6 txt-gray'>{{item.color}}颜色</view>
-          <view class='margin-left-10 h6 txt-gray'>{{item.size}}尺码</view>
-        </view>
-        <view class='flex-row margin-top-20'>
-          <view class='h5 to-red'>￥</view>
-          <view class='h5 to-red'>65.00</view>
-          <view class='flex-1'></view>
-          <view class='h5'>x1</view>
-        </view>
-      </view>
-    </view>
-  </view>
 
   <view class='' style='background:white'>
     <view class='flex-row padding-20'>
@@ -75,13 +57,14 @@
     </view>
     <view style='height:2rpx;background:#f0f0f0'></view>
     <view class='flex-row padding-20'>
-      <view class='h6'>应付款：</view>
+      <view wx:if="{{orderinfo.status=='A'}}" class='h6'>应付款：</view>
+      <view  wx:if="{{orderinfo.status!='A'}}" class='h6'>应付款：</view>
       <view class='flex-1'></view>
-      <view class='to-red h6'>￥549.30</view>
+      <view class='to-red h6'>￥{{orderinfo.amount}}</view>
     </view>
   </view>
 
-  <button class='h5 but'>付款</button>
+  <button bindtap="payorder" wx:if="{{orderinfo.status=='A'}}" class='h5 but'>付款</button>
 
 
 </view>

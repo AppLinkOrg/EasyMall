@@ -1,131 +1,139 @@
-import {
-  ApiConfig
-} from 'apiconfig';
-export class AddressApi {
-  //传参数，获取我的名字，请注意这个范例
-  addaddress(json, callback, showLoading = true) {
+/*******使用方法，下面两句复制到page的js文件的头部
 
-    if (showLoading)
-      ApiConfig.ShowLoading();
+import { ApiConfig } from '../../apis/apiconfig';
+import { InstApi } from '../../apis/address.api';
 
-    var header = ApiConfig.GetHeader();
-    console.log(header);
-    wx.request({
-      url: ApiConfig.GetApiUrl() + 'address/addaddress',
-      data: json,
-      method: 'POST',
-      dataType: 'json',
-      header: header,
-      success: function(res) {
-        if (callback != null) {
-          callback(res.data);
-        }
-      },
-      fail: function(res) {
-        console.log(res);
-        callback(false);
-      },
-      complete: function(res) {
-        console.log(res);
+var addressApi=new AddressApi();
+*******/
+import { ApiConfig } from 'apiconfig';
+export class AddressApi{
+
+
+    addaddress(json, callback, showLoading = true) {
 
         if (showLoading)
-          ApiConfig.CloseLoading();
-      }
-    })
-  }
+            ApiConfig.ShowLoading();
 
-  addresslist(json, callback, showLoading = true) {
+        var header = ApiConfig.GetHeader();
+        console.log(header);
+        console.log(json);
+        wx.request({
+            url: ApiConfig.GetApiUrl() + 'address/addaddress',
+            data: json,
+            method: 'POST',
+            dataType: 'json',
+            header: header,
+            success: function (res) {
+                if (callback != null) {
+                    callback(res.data);
+                }
+            },
+            fail: function (res) {
+                console.log(res);
+                callback(false);
+            },
+            complete: function (res) {
+                console.log(res);
+            
+                if (showLoading)
+                    ApiConfig.CloseLoading();
+            }
+        })
+    }
 
-    if (showLoading)
-      ApiConfig.ShowLoading();
-
-    var header = ApiConfig.GetHeader();
-    console.log(header);
-    wx.request({
-      url: ApiConfig.GetApiUrl() + 'address/addresslist',
-      data: json,
-      method: 'POST',
-      dataType: 'json',
-      header: header,
-      success: function(res) {
-        if (callback != null) {
-          callback(res.data);
-        }
-      },
-      fail: function(res) {
-        console.log(res);
-        callback(false);
-      },
-      complete: function(res) {
-        console.log(res);
-
-        if (showLoading)
-          ApiConfig.CloseLoading();
-      }
-    })
-  }
-
-  addressinfo(json, callback, showLoading = true) {
-
-    if (showLoading)
-      ApiConfig.ShowLoading();
-
-    var header = ApiConfig.GetHeader();
-    console.log(header);
-    wx.request({
-      url: ApiConfig.GetApiUrl() + 'address/addressinfo',
-      data: json,
-      method: 'POST',
-      dataType: 'json',
-      header: header,
-      success: function(res) {
-        if (callback != null) {
-          callback(res.data);
-        }
-      },
-      fail: function(res) {
-        console.log(res);
-        callback(false);
-      },
-      complete: function(res) {
-        console.log(res);
+    addressdel(json, callback, showLoading = true) {
 
         if (showLoading)
-          ApiConfig.CloseLoading();
-      }
-    })
-  }
+            ApiConfig.ShowLoading();
 
-  addressdel(json, callback, showLoading = true) {
+        var header = ApiConfig.GetHeader();
+        console.log(header);
+        console.log(json);
+        wx.request({
+            url: ApiConfig.GetApiUrl() + 'address/addressdel',
+            data: json,
+            method: 'POST',
+            dataType: 'json',
+            header: header,
+            success: function (res) {
+                if (callback != null) {
+                    callback(res.data);
+                }
+            },
+            fail: function (res) {
+                console.log(res);
+                callback(false);
+            },
+            complete: function (res) {
+                console.log(res);
+            
+                if (showLoading)
+                    ApiConfig.CloseLoading();
+            }
+        })
+    }
 
-    if (showLoading)
-      ApiConfig.ShowLoading();
-
-    var header = ApiConfig.GetHeader();
-    console.log(header);
-    wx.request({
-      url: ApiConfig.GetApiUrl() + 'address/addressdel',
-      data: json,
-      method: 'POST',
-      dataType: 'json',
-      header: header,
-      success: function (res) {
-        if (callback != null) {
-          callback(res.data);
-        }
-      },
-      fail: function (res) {
-        console.log(res);
-        callback(false);
-      },
-      complete: function (res) {
-        console.log(res);
+    addressinfo(json, callback, showLoading = true) {
 
         if (showLoading)
-          ApiConfig.CloseLoading();
-      }
-    })
-  }
+            ApiConfig.ShowLoading();
 
+        var header = ApiConfig.GetHeader();
+        console.log(header);
+        console.log(json);
+        wx.request({
+            url: ApiConfig.GetApiUrl() + 'address/addressinfo',
+            data: json,
+            method: 'POST',
+            dataType: 'json',
+            header: header,
+            success: function (res) {
+                if (callback != null) {
+                    callback(res.data);
+                }
+            },
+            fail: function (res) {
+                console.log(res);
+                callback(false);
+            },
+            complete: function (res) {
+                console.log(res);
+            
+                if (showLoading)
+                    ApiConfig.CloseLoading();
+            }
+        })
+    }
 
+    addresslist(json, callback, showLoading = true) {
+
+        if (showLoading)
+            ApiConfig.ShowLoading();
+
+        var header = ApiConfig.GetHeader();
+        console.log(header);
+        console.log(json);
+        wx.request({
+            url: ApiConfig.GetApiUrl() + 'address/addresslist',
+            data: json,
+            method: 'POST',
+            dataType: 'json',
+            header: header,
+            success: function (res) {
+                if (callback != null) {
+                    callback(res.data);
+                }
+            },
+            fail: function (res) {
+                console.log(res);
+                callback(false);
+            },
+            complete: function (res) {
+                console.log(res);
+            
+                if (showLoading)
+                    ApiConfig.CloseLoading();
+            }
+        })
+    }
 }

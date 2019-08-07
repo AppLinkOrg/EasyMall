@@ -28,7 +28,8 @@ class Content extends AppBase {
     this.Base.setMyData({
       status: false,
       select: false,
-      isfav: "N"
+      isfav: "N",
+    
     });
   }
 
@@ -44,6 +45,8 @@ class Content extends AppBase {
     var goodsapi = new GoodsApi();
     var instapi = new InstApi();
     var orderapi = new OrderApi();
+    this.Base.setMyData({ num: 1})
+
     orderapi.getgwclist({
       status: 'c'
     }, (getgwclist) => {
@@ -144,8 +147,21 @@ class Content extends AppBase {
       img: shop.cover,
       color_id: this.Base.getMyData().color,
       size_id: this.Base.getMyData().size,
-      num: 1,
-      status: "C"
+      num: this.Base.getMyData().num,
+      status: "C",
+      selected:'N',
+    }
+
+    var data1 = {
+      member_id: member_id,
+      goods_id: shop.id,
+      pricestr: shop.pricestr,
+      img: shop.cover,
+      color_id: this.Base.getMyData().color,
+      size_id: this.Base.getMyData().size,
+      num: this.Base.getMyData().num,
+      status: "C",
+      selected: 'Y',
     }
     console.log(data);
     if (this.Base.getMyData().color == undefined) {
@@ -182,10 +198,17 @@ class Content extends AppBase {
       })
     }
     if (type == "buybuybuy") {
-      wx.navigateTo({
-        url: '/pages/pay/pay',
+      orderapi.gouwuche(data1, (res) => {
         
+        wx.navigateTo({
+          url: '/pages/pay/pay',
+
+        })
+    
+  
       })
+
+     
     }
 
   }
@@ -201,16 +224,30 @@ class Content extends AppBase {
   addgouwuche(e) {
     var that = this;
     var orderapi = new OrderApi();
+    var member_id = this.Base.getMyData().memberinfo.id;
     var shop = this.Base.getMyData().info;
     var data = {
-      member_id: 25,
+      member_id: member_id,
       goods_id: shop.id,
       pricestr: shop.pricestr,
       img: shop.cover,
       color_id: this.Base.getMyData().color,
       size_id: this.Base.getMyData().size,
-      num: 1,
-      status: "C"
+      num: this.Base.getMyData().num,
+      status: "C",
+      checked:'N'
+    }
+
+    var data1 = {
+      member_id: member_id,
+      goods_id: shop.id,
+      pricestr: shop.pricestr,
+      img: shop.cover,
+      color_id: this.Base.getMyData().color,
+      size_id: this.Base.getMyData().size,
+      num: this.Base.getMyData().num,
+      status: "C",
+      checked: 'Y'
     }
 
 
@@ -236,6 +273,58 @@ class Content extends AppBase {
         size: 0
       })
     })
+  }
+  lijibuybuybuy(e) {
+    var that = this;
+    var orderapi = new OrderApi();
+    var member_id = this.Base.getMyData().memberinfo.id;
+    var shop = this.Base.getMyData().info;
+    var data = {
+      member_id: member_id,
+      goods_id: shop.id,
+      pricestr: shop.pricestr,
+      img: shop.cover,
+      color_id: this.Base.getMyData().color,
+      size_id: this.Base.getMyData().size,
+      num: this.Base.getMyData().num,
+      status: "C",
+      checked: 'Y'
+    }
+
+    if (this.Base.getMyData().color == undefined) {
+      this.Base.info("请选择商品颜色");
+      return;
+    }
+    if (this.Base.getMyData().size == undefined) {
+      this.Base.info("请选择商品尺码");
+      return;
+    }
+    orderapi.gouwuche(data, (res) => {
+    
+      wx.navigateTo({
+        url: '/pages/pay/pay',
+
+      })
+    
+    })
+  }
+
+  jia(){
+    var num = this.Base.getMyData().num;
+    this.Base.setMyData({ num: ++num })
+  }
+  jian() {
+  var num =this.Base.getMyData().num;
+    
+    if(num==1)
+    {
+      return
+    }
+    else{
+    this.Base.setMyData({num:--num})
+
+    }
+
   }
 
   fav(e) {
@@ -284,4 +373,7 @@ body.toshopcart = content.toshopcart;
 body.select = content.select;
 body.addgouwuche = content.addgouwuche;
 body.fav = content.fav;
+body.jia = content.jia;
+body.jian = content.jian;
+body.lijibuybuybuy = content.lijibuybuybuy;
 Page(body)

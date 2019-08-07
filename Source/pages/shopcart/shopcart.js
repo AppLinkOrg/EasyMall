@@ -43,6 +43,22 @@ class Content extends AppBase {
       status: 'c'
     }, (getgwclist) => {
       console.log(getgwclist)
+       
+       for(var i=0;i<getgwclist.length;i++)
+       {
+          if(getgwclist[i].selected=='false')
+          {
+         
+            getgwclist[i].selected=false;
+          }
+          else{
+
+            getgwclist[i].selected = true;;
+          }
+
+       }
+      
+
       this.Base.setMyData({
         getgwclist: getgwclist
       });
@@ -52,9 +68,9 @@ class Content extends AppBase {
 
   todetails(e) {
     var name = e.currentTarget.dataset.name;
-    if (name == "guan") {
+    if (name == "guang") {
       wx.switchTab({
-        url: '/pages/home/home',
+        url: '/pages/goodscat/goodscat',
       })
     }
   }
@@ -74,6 +90,8 @@ class Content extends AppBase {
   }
 
   selectList(e) {
+
+    var orderapi = new OrderApi();
     var index = e.currentTarget.dataset.index; // 获取data- 传进来的index
     var carts = this.Base.getMyData().getgwclist; // 获取购物车列表
     var selected = carts[index].selected; // 获取当前商品的选中状态
@@ -89,6 +107,25 @@ class Content extends AppBase {
     //   console.log(carts.length); 
     // }
     this.getTotalPrice(); // 重新获取总价
+
+    var data = {
+      member_id: this.Base.getMyData().memberinfo.id,
+      goods_id: carts[index].goods_id,
+      pricestr: carts[index].pricestr,
+      img: carts[index].img,
+      color_id: carts[index].color_id,
+      size_id: carts[index].size_id,
+      num: 0,
+      status: "C",
+      selected: carts[index].selected==true?'Y':'N',
+    }
+
+
+    orderapi.gouwuche(data, (res) => {
+      console.log(res);
+    }, false)
+
+
   }
 
   selectAll(e) {
@@ -103,22 +140,57 @@ class Content extends AppBase {
       getgwclist: carts
     });
     this.getTotalPrice(); // 重新获取总价
+
+    var orderapi = new OrderApi(); 
+    orderapi.allxuan({all:selectAllStatus==true?'Y':'N'},(res)=>{
+
+      console.log(res);
+
+    })
+      
+    console.log(selectAllStatus);
+
+
+
+
   }
 
   // 增加数量
   addCount(e) {
+    var orderapi=new OrderApi();
     var index = e.currentTarget.dataset.index;
     var carts = this.Base.getMyData().getgwclist;
+    console.log(carts);
     var num = carts[index].num;
     carts[index].num++;
     this.Base.setMyData({
       getgwclist: carts,
     });
     this.getTotalPrice();
+
+    var data = {
+      member_id: this.Base.getMyData().memberinfo.id,
+      goods_id: carts[index].goods_id,
+      pricestr: carts[index].pricestr,
+      img: carts[index].img,
+      color_id: carts[index].color_id,
+      size_id: carts[index].size_id,
+      num: 1,
+      status: "C",
+      selected: carts[index].selected == true ? 'Y' : 'N',
+    }
+
+
+    orderapi.gouwuche(data, (res) => {
+      console.log(res);
+    },false)
+
+
   }
 
   // 减少数量
   minusCount(e) {
+    var orderapi = new OrderApi();
     var index = e.currentTarget.dataset.index;
     var carts = this.Base.getMyData().getgwclist;
     var num = carts[index].num;
@@ -130,23 +202,31 @@ class Content extends AppBase {
         getgwclist: carts,
       });
       this.getTotalPrice();
+      var data = {
+        member_id: this.Base.getMyData().memberinfo.id,
+        goods_id: carts[index].goods_id,
+        pricestr: carts[index].pricestr,
+        img: carts[index].img,
+        color_id: carts[index].color_id,
+        size_id: carts[index].size_id,
+        num: -1,
+        status: "C",
+        selected: carts[index].selected == true ? 'Y' : 'N',
+      }
+
+
+      orderapi.gouwuche(data, (res) => {
+        console.log(res);
+      },false)
     }
   }
 
   jiesuan(e) {
-    var id = this.Base.getMyData().getgwclist.id;
-    var fgf = this.Base.getMyData().getgwclist;
-    var order_id = [];
-    for (var i = 0; i < fgf.length; i++) {
-      if (fgf[i].selected == true) {
-        order_id.push(fgf[i])
-      }
-    }
-    var jsonorder = JSON.stringify(order_id)
-    console.log(jsonorder);
+   
+   
     // return;
     wx.navigateTo({
-      url: '/pages/pay/pay?jsonorder=' + jsonorder,
+      url: '/pages/pay/pay',
     })
   }
 
